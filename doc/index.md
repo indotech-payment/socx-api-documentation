@@ -38,7 +38,3 @@ Buka `http://127.0.0.1:8000` di browser.
 
 - **Siap dipakai untuk integrasi:** direct purchase (JSON/HTTP/XML), cek saldo, cek status, tabel RC — sesuai sumber internal `socx.md`.
 - **Perlu review tim SOCX / API:** callback setelah `rc = 68` (pending), verifikasi webhook/XML `topUpReport`, URL & kontrak **inquiry** / daftar harga, kode produk resmi untuk game.
-
-## Repositori GitHub
-
-Sesuaikan `repo_url` (dan opsional `site_url`) di `mkdocs.yml` agar tautan di header situs dan URL kanonik sesuai repositori Anda.

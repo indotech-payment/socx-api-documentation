@@ -4,7 +4,6 @@
 site_name: Dokumentasi API SOCX
 site_description: Integrasi H2H Reseller — direct purchase, saldo, status, kode respons
 site_author: SOCX
-site_url: https://maulana222.github.io/socx-api-documentation/
 
 repo_url: https://github.com/maulana222/socx-api-documentation
 edit_uri: edit/main/doc/

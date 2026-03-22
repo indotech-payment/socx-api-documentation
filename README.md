@@ -78,7 +78,7 @@ Diagram dan skenario detail: [doc/transaksi-direct/contoh-respons-pulsa.md](doc/
 
 ```
 .
-├── README.md                 ← Anda di sini (pengantar GitHub)
+├── README.md                 ← Anda di sini (pengantar repositori)
 ├── mkdocs.yml                ← Konfigurasi situs dokumentasi (Material)
 ├── requirements-docs.txt     ← Dependensi Python untuk MkDocs
 ├── .gitignore                ← Mengabaikan site/, venv, dll.
@@ -112,14 +112,6 @@ mkdocs serve
 
 Buka browser ke **http://127.0.0.1:8000** — navigasi kiri, pencarian, dan penyalinan blok kode didukung oleh [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
 
-**Build statis (folder `site/`):**
-
-```bash
-mkdocs build
-```
-
-Output di `site/` (biasanya di `.gitignore`).
-
 ---
 
 ## Konten per topik (tautan langsung)
@@ -129,7 +121,6 @@ Output di `site/` (biasanya di `.gitignore`).
 - [Contoh respons — pulsa](doc/transaksi-direct/contoh-respons-pulsa.md)
 - [Contoh respons — produk game](doc/transaksi-direct/contoh-respons-produk-game.md)
 - [Inquiry & katalog (menyusul)](doc/inquiry/README.md)
-- [Deploy ke GitHub Pages](doc/deploy-github-pages.md)
 
 ---
 
