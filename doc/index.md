@@ -1,6 +1,6 @@
 # Dokumentasi API SOCX (Reseller H2H)
 
-Dokumen ini untuk integrasi **Host-to-Host (H2H)** reseller ke platform SOCX. Struktur mengikuti alur dokumentasi teknis sejenis [Digiflazz Developer](https://developer.digiflazz.com/) (pengenalan → persiapan → transaksi → kode respons → contoh → pengujian).
+Dokumen ini untuk integrasi **Host-to-Host (H2H)** reseller ke platform SOCX. Isi disusun bertahap: **pengenalan → persiapan integrasi → transaksi → kode respons → contoh → pengujian**.
 
 Gunakan **menu kiri** untuk navigasi (situs ini dihasilkan dengan [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)).
 

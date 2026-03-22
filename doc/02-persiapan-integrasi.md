@@ -38,4 +38,4 @@ Selalu gunakan **HTTPS** untuk semua panggilan API.
 
 ## 6. Yang akan menyusul (inquiry)
 
-Daftar harga / katalog produk / **inquiry** — tunggu URL dan kontrak dari **Pak Leo**, lalu tambahkan halaman di folder [inquiry](inquiry/README.md).
+Daftar harga / katalog produk / **inquiry**  [inquiry](inquiry/README.md).

@@ -1,6 +1,6 @@
 # Dokumentasi API SOCX (Reseller H2H)
 
-Repositori ini berisi **dokumentasi teknis** untuk integrasi **Host-to-Host (H2H)** antara sistem Anda dan platform **SOCX** sebagai reseller. Dokumen ditulis dalam Bahasa Indonesia, dengan struktur alur mirip dokumentasi API marketplace sejenis ([Digiflazz Developer](https://developer.digiflazz.com/)): pengenalan → persiapan → transaksi → kode respons → contoh → pengujian.
+Repositori ini berisi **dokumentasi teknis** untuk integrasi **Host-to-Host (H2H)** antara sistem Anda dan platform **SOCX** sebagai reseller. Dokumen ditulis dalam Bahasa Indonesia dan diorganisir bertahap: **pengenalan → persiapan integrasi → transaksi → kode respons → contoh → pengujian**.
 
 ---
 
@@ -152,5 +152,3 @@ Saran kontribusi: kirim **Pull Request** untuk perbaikan teks, contoh request/re
 Hak cipta dan kebijakan distribusi dokumen mengikuti kebijakan **SOCX / pemilik API**. Untuk akses sandbox, whitelist IP, atau pertanyaan integrasi, hubungi **tim SOCX / support** melalui kanal resmi yang diberikan kepada mitra.
 
 ---
-
-**Repositori GitHub:** [maulana222/socx-api-documentation](https://github.com/maulana222/socx-api-documentation) — sesuaikan `repo_url` di `mkdocs.yml` jika repo dipindah atau diganti nama.
