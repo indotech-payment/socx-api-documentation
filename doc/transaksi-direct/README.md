@@ -23,7 +23,7 @@ Bagian ini fokus pada alur **pembelian langsung** (top-up / voucher) tanpa alur 
 | [kode-respons.md](./kode-respons.md) | Tabel RC |
 | [contoh-respons-pulsa.md](./contoh-respons-pulsa.md) | Contoh lengkap pulsa |
 | [contoh-respons-produk-game.md](./contoh-respons-produk-game.md) | Konvensi & contoh game |
-| [matriks-klasifikasi-produk-game.md](./matriks-klasifikasi-produk-game.md) | Klasifikasi game: topup/voucher, butuh area/tidak, mapping parameter |
+| [klasifikasi-produk-game.md](./klasifikasi-produk-game.md) | Voucher / top-up non-zona / top-up zona; mapping `msisdn` |
 | [skenario-pengujian.md](./skenario-pengujian.md) | Skenario QA |
 
 Deposit tiket (`/deposit_ticket`) ada di spesifikasi sumber tetapi di luar fokus **direct purchase**; dapat ditambahkan halaman terpisah jika dibutuhkan.
