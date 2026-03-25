@@ -6,7 +6,7 @@ Gunakan bersama [Contoh respons — produk game](./contoh-respons-produk-game.md
 
 Di API **SOCX purchase**, parameter game biasanya dimapping ke satu field **`msisdn`** sesuai **aturan per `code`** (delimiter dan urutan dari tim SOCX/API).
 
-## Flow Inquiry & Purchase (umum)
+## Direct Purchase (umum)
 
 Diagram berikut menggambarkan alur sampai transaksi final. Request detail (payload) mengikuti kontrak SOCX/API untuk `code` game Anda.
 
@@ -14,24 +14,19 @@ Diagram berikut menggambarkan alur sampai transaksi final. Request detail (paylo
 sequenceDiagram
   autonumber
   participant Client as Client/Reseller
-  participant SOCX as SOCX API
-  participant Biller as Game Provider
+  participant Indotech as Indotech
+  participant Biller as Biller/Provider
 
-  Client->>SOCX: POST /inquiry (code, parameter input)
-  SOCX-->>Client: response inquiry (info produk, aturan parameter)
-
-  Client->>SOCX: POST /purchase (code, msisdn, request_id)
-  alt SOCX pending (rc=68)
-    SOCX->>Biller: request topup / voucher (sesuai kategori game)
-    SOCX-->>Client: response purchase (rc=68, pending)
-    Biller-->>SOCX: response (rc final, sn bila sukses)
-    SOCX-->>Client: response final (rc=00 atau gagal)
-  else SOCX tidak pending (langsung dapat rc final)
-    SOCX-->>Client: response purchase (rc=00 atau gagal)
+  Client->>Indotech: POST /purchase (code, msisdn, request_id)
+  alt Indotech pending (rc=68)
+    Indotech->>Biller: request topup / voucher (sesuai kategori)
+    Indotech-->>Client: response purchase (rc=68, pending)
+    Biller-->>Indotech: response (rc final, sn bila sukses)
+    Indotech-->>Client: response final (rc=00 atau gagal)
   end
 ```
 
-## TOPUP
+## 1. TOPUP
 
 #### &nbsp;&nbsp;&nbsp;&nbsp;Top-up — tanpa zona (non-zone)
 
@@ -81,7 +76,7 @@ Baris di bawah diisi dari **katalog & uji nyata**. SKU baru ditambahkan seiring 
 | `CFF5` | Free Fire 5 Diamond CORP | `TOPUP_NON_ZONA` | user ID | `code`, `msisdn`, `request_id` | `704899131` | `Free Fire 5 Diamonds /nickname : 死•ＩＲＦＡＮ•☠︎ refid: ab954b112f6c8aefbc6550167da150eb` | Terverifikasi |
 | `CML5` | MLBB 5 Diamonds (5+0 Diamonds) Corporate | `TOPUP_ZONA` | gabungan user + zone | `code`, `msisdn`, `request_id` | `4189395759887` | `ZIYECH. . RefId: CS774320333ZGVLM0U8VI` | Terverifikasi |
 
-## VOUCHER
+## 2. VOUCHER
 
 Voucher adalah kategori produk kode digital untuk redeem. Pada kategori ini:
 

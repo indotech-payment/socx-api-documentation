@@ -28,6 +28,7 @@ Kode `rc` pada respons JSON (dan `RESPONSECODE` pada XML) menggambarkan hasil tr
 | `36` | Akun mencapai batas maksimal limit provider | Gagal |
 | `68` | Transaksi pending, menunggu callback | **Pending** |
 | `70` | Gagal biller | Gagal |
+| `75` | Gagal | Gagal |
 
 ## Catatan implementasi
 
