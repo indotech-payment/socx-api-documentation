@@ -9,7 +9,7 @@ Repositori ini berisi **dokumentasi teknis** untuk integrasi **Host-to-Host (H2H
 - [Ringkasan transaksi direct purchase](doc/transaksi-direct/README.md)
 - [Kode respons (RC) lengkap](doc/transaksi-direct/kode-respons.md)
 - [Contoh respons — pulsa](doc/transaksi-direct/contoh-respons-pulsa.md)
-- [Klasifikasi produk game dan Contoh respons — produk game ](doc/transaksi-direct/klasifikasi-produk-game.md)
+- [Klasifikasi dan Contoh respons — produk game ](doc/transaksi-direct/klasifikasi-produk-game.md)
 - [Inquiry — ringkasan](doc/inquiry/README.md)
 - [Inquiry POST (JSON), contoh PLN](doc/inquiry/inquiry-post.md)
 
