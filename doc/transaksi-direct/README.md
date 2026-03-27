@@ -1,6 +1,6 @@
 # Transaksi — Direct purchase
 
-Bagian ini fokus pada alur **pembelian langsung** (top-up / voucher) tanpa alur inquiry terpisah.
+Bagian ini fokus pada alur **pembelian langsung** (top-up / voucher). Untuk **diagram alur** tingkat dokumen: **[Direct Purchase without Inquiry](./flow-direct-purchase-without-inquiry.md)** (tanpa `POST /inquiry`) dan **[Direct Purchase with Inquiry](./flow-direct-purchase-with-inquiry.md)** (inquiry dulu, lalu purchase).
 
 ## Alur disarankan
 
@@ -22,7 +22,9 @@ Bagian ini fokus pada alur **pembelian langsung** (top-up / voucher) tanpa alur 
 | [cek-status.md](./cek-status.md) | POST status |
 | [kode-respons.md](./kode-respons.md) | Tabel RC |
 | [contoh-respons-pulsa.md](./contoh-respons-pulsa.md) | Contoh lengkap pulsa |
-| [flow-inquiry-purchase.md](./flow-inquiry-purchase.md) | Sequence diagram flow inquiry & purchase |
+| [flow-direct-purchase-without-inquiry.md](./flow-direct-purchase-without-inquiry.md) | Alur & diagram direct purchase **tanpa** inquiry |
+| [flow-direct-purchase-with-inquiry.md](./flow-direct-purchase-with-inquiry.md) | Alur & diagram inquiry → purchase |
+| [flow-inquiry-purchase.md](./flow-inquiry-purchase.md) | Sequence diagram inquiry & purchase (ringkas, konteks game) |
 | [klasifikasi-produk-game.md](./klasifikasi-produk-game.md) | Klasifikasi + contoh request/response game; mapping `msisdn` |
 | [skenario-pengujian.md](./skenario-pengujian.md) | Skenario QA |
 

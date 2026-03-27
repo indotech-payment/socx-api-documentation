@@ -1,0 +1,43 @@
+# Direct Purchase without Inquiry
+
+Alur **direct purchase tanpa inquiry** berarti Anda memanggil **`POST /purchase`** langsung tanpa langkah **`POST /inquiry`** terlebih dahulu. Cocok untuk banyak produk: **pulsa/data**, **game** (top-up / voucher sesuai katalog), **e-wallet direct**, dan lainnya selama SKU tidak mewajibkan pre-check inquiry.
+
+## Ringkasan langkah integrasi
+
+1. **(Opsional)** [`GET /saldo`](cek-saldo.md) — cek saldo sebelum transaksi besar.
+2. **[`POST /purchase`](pembelian-json-post.md)** — kirim `code`, `msisdn`, `request_id` unik.
+3. **Baca `rc`** pada respons — lihat [kode respons](kode-respons.md).
+4. Jika **`rc = 68` (pending)** — polling [`POST /status`](cek-status.md) hingga status final, atau tunggu callback jika sudah disepakati.
+
+## Diagram alur (referensi dari klasifikasi game)
+
+Diagram berikut sama dengan bagian **Direct Purchase (umum)** di [klasifikasi produk game](klasifikasi-produk-game.md): satu permintaan purchase ke Indotech, dengan cabang pending hingga hasil final dari biller.
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant Client as Client/Reseller
+  participant Indotech as Indotech
+  participant Biller as Biller/Provider
+
+  Client->>Indotech: POST /purchase (code, msisdn, request_id)
+  alt Indotech pending (rc=68)
+    Indotech->>Biller: request topup / voucher (sesuai kategori)
+    Indotech-->>Client: response purchase (rc=68, pending)
+    Biller-->>Indotech: response (rc final, sn bila sukses)
+    Indotech-->>Client: response final (rc=00 atau gagal)
+  end
+```
+
+## Detail produk game (tanpa inquiry)
+
+Parameter `msisdn`, interpretasi `sn`, dan contoh request/response per `code` — ikuti **[klasifikasi produk game](klasifikasi-produk-game.md)** (Voucher, top-up tanpa zona, top-up dengan zona).
+
+## Link terkait
+
+| Topik | Halaman |
+|-------|---------|
+| Request & field respons JSON | [Pembelian JSON (POST)](pembelian-json-post.md) |
+| Pending & polling | [Cek status](cek-status.md) |
+| Tabel `rc` | [Kode respons](kode-respons.md) |
+| Ringkasan folder direct purchase | [Transaksi — direct purchase](README.md) |

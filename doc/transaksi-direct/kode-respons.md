@@ -2,6 +2,74 @@
 
 Kode `rc` pada respons JSON (dan `RESPONSECODE` pada XML) menggambarkan hasil transaksi.
 
+## Payload respons (JSON)
+
+Untuk **`POST /purchase`** dan **`POST /status`**, body respons memakai **JSON** dengan field umum berikut. Nilai konkret (mis. `message`, `sn`) mengikuti produk dan skenario; lihat juga [contoh pulsa](./contoh-respons-pulsa.md) dan [pembelian JSON](./pembelian-json-post.md).
+
+| Field | Tipe | Keterangan |
+|-------|------|------------|
+| `code` | string | Kode produk yang diproses |
+| `msisdn` | string | Nomor / ID tujuan (echo dari request jika relevan) |
+| `request_id` | string | Echo `request_id` Anda |
+| `rc` | string | Kode hasil — lihat tabel di bawah |
+| `trxid` | number | ID transaksi di sisi platform; bisa `0` saat gagal awal (verifikasi di UAT) |
+| `price` | number | Harga yang dikenakan untuk transaksi ini |
+| `balance` | number | Saldo deposit Anda setelah operasi (sesuai kebijakan API) |
+| `sn` | string | Serial / referensi biller / voucher; bisa kosong saat pending atau gagal |
+| `message` | string | Deskripsi human-readable (status, error) |
+
+### Contoh — sukses (`rc = 00`)
+
+```json
+{
+  "code": "HSA5",
+  "msisdn": "08121231231",
+  "request_id": "PULSA-20250322-0001",
+  "rc": "00",
+  "trxid": 16413,
+  "price": 5400,
+  "balance": 341884600,
+  "sn": "02123123123123123",
+  "message": "SUKSES"
+}
+```
+
+### Contoh — pending (`rc = 68`)
+
+```json
+{
+  "code": "HSA5",
+  "msisdn": "08121231231",
+  "request_id": "PULSA-20250322-0001",
+  "rc": "68",
+  "trxid": 16413,
+  "price": 5400,
+  "balance": 341890000,
+  "sn": "",
+  "message": "PENDING, Transaksi sedang diproses"
+}
+```
+
+### Contoh — gagal (`rc ≠ 00` dan bukan pending)
+
+```json
+{
+  "code": "HSA5",
+  "msisdn": "08100000000",
+  "request_id": "PULSA-20250322-0002",
+  "rc": "07",
+  "trxid": 0,
+  "price": 0,
+  "balance": 341890000,
+  "sn": "",
+  "message": "Nomor pelanggan tidak ditemukan"
+}
+```
+
+**XML:** pemetaan setara memakai elemen `RESPONSECODE` (bukan `rc`); detail di [pembelian XML](./pembelian-xml.md).
+
+## Daftar kode RC
+
 | RC | Keterangan | Status |
 |----|------------|--------|
 | `00` | Transaksi sukses | Berhasil |

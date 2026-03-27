@@ -8,7 +8,7 @@ Di API **SOCX purchase**, parameter game biasanya dimapping ke satu field **`msi
 
 ## Direct Purchase (umum)
 
-Diagram berikut menggambarkan alur sampai transaksi final. Request detail (payload) mengikuti kontrak SOCX/API untuk `code` game Anda.
+Diagram berikut menggambarkan alur sampai transaksi final. Request detail (payload) mengikuti kontrak SOCX/API untuk `code` game Anda. Penjelasan alur terpisah (tanpa inquiry): **[Direct Purchase without Inquiry](flow-direct-purchase-without-inquiry.md)**.
 
 ```mermaid
 sequenceDiagram
@@ -93,7 +93,7 @@ Voucher adalah kategori produk kode digital untuk redeem. Pada kategori ini:
 
 ### Request (JSON POST)
 
-#### 1) Voucher (`GPC5`)
+#### 1) Voucher
 
 ```json
 {
@@ -103,7 +103,7 @@ Voucher adalah kategori produk kode digital untuk redeem. Pada kategori ini:
 }
 ```
 
-#### 2) Top-up non-zona (`CFF5`)
+#### 2) Top-up non-zona
 
 ```json
 {
@@ -113,7 +113,7 @@ Voucher adalah kategori produk kode digital untuk redeem. Pada kategori ini:
 }
 ```
 
-#### 3) Top-up zona (`CML5`)
+#### 3) Top-up zona
 
 ```json
 {
@@ -138,9 +138,9 @@ Voucher adalah kategori produk kode digital untuk redeem. Pada kategori ini:
 }
 ```
 
-### Respons sukses (contoh real)
+### Respons sukses
 
-#### Voucher (`GPC5`)
+#### Voucher
 
 ```json
 {
@@ -157,7 +157,7 @@ Voucher adalah kategori produk kode digital untuk redeem. Pada kategori ini:
 }
 ```
 
-#### Top-up zona (`CML5`)
+#### Top-up zona 
 
 ```json
 {
@@ -176,7 +176,7 @@ Voucher adalah kategori produk kode digital untuk redeem. Pada kategori ini:
 }
 ```
 
-#### Top-up non-zona (`CFF5`)
+#### Top-up non-zona
 
 ```json
 {

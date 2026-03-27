@@ -1,20 +1,51 @@
-# Dokumentasi API SOCX (Reseller H2H)
+# Dokumentasi API Indotech (Reseller H2H)
 
-Repositori ini berisi **dokumentasi teknis** untuk integrasi **Host-to-Host (H2H)** antara sistem Anda dan platform **SOCX** sebagai reseller. Dokumen ditulis dalam Bahasa Indonesia dan diorganisir bertahap: **pengenalan → persiapan integrasi → transaksi → kode respons → contoh → pengujian**.
+Repositori ini berisi **dokumentasi teknis** untuk integrasi **Host-to-Host (H2H)** antara sistem Anda dan platform **Indotech** sebagai reseller. Dokumen ditulis dalam Bahasa Indonesia dan diorganisir per **kategori produk** serta **referensi teknis** (selaras sidebar MkDocs).
 
 ---
 
 ## Daftar isi
 
-- [Ringkasan transaksi direct purchase](doc/transaksi-direct/README.md)
-- [Kode respons (RC) lengkap](doc/transaksi-direct/kode-respons.md)
-- [Contoh respons — pulsa](doc/transaksi-direct/contoh-respons-pulsa.md)
-- [Contoh respons — produk game](doc/transaksi-direct/contoh-respons-produk-game.md)
-- [Klasifikasi produk game](doc/transaksi-direct/klasifikasi-produk-game.md)
-- [Inquiry — ringkasan](doc/inquiry/README.md)
-- [Inquiry POST (JSON), contoh PLN](doc/inquiry/inquiry-post.md)
+### Introduction & Transaction Flow
 
-Beranda situs MkDocs dan tabel lengkap endpoint: [doc/index.md](doc/index.md).
+- [Ringkasan alur](doc/introduction-transaction-flow.md)
+- [Pengenalan](doc/01-pengenalan.md)
+- [Direct Purchase without Inquiry](doc/transaksi-direct/flow-direct-purchase-without-inquiry.md)
+- [Direct Purchase with Inquiry](doc/transaksi-direct/flow-direct-purchase-with-inquiry.md)
+
+### PREPAID (Pulsa, Data)
+
+- [Ringkasan PREPAID](doc/prepaid/README.md) — request, respon, test case
+
+### GAME
+
+- [Ringkasan GAME](doc/game/README.md)
+- [Top-up — tanpa zona (non-zone)](doc/game/topup-non-zone.md)
+- [Top-up — dengan zona](doc/game/topup-zona.md)
+- [Voucher](doc/game/voucher.md)
+- [Klasifikasi & contoh respons (gabungan)](doc/transaksi-direct/klasifikasi-produk-game.md)
+
+### EWALLET
+
+- [Ringkasan EWALLET](doc/ewallet/README.md)
+- [DANA (inquiry) — ringkasan](doc/ewallet/dana-inquiry.md)
+- [DANA — Denom tetap](doc/ewallet/dana-inquiry-denom-tetap.md)
+- [DANA — Denom Bebas](doc/ewallet/dana-inquiry-denom-bebas.md)
+
+### Inquiry khusus
+
+- [Inquiry PLN (`CPLN`)](doc/inquiry/inquiry-pln.md)
+
+### Referensi teknis
+
+- [Persiapan integrasi](doc/02-persiapan-integrasi.md)
+- [Cek saldo](doc/transaksi-direct/cek-saldo.md) · [Pembelian JSON](doc/transaksi-direct/pembelian-json-post.md) · [HTTP / XML](doc/transaksi-direct/pembelian-http.md) · [Cek status](doc/transaksi-direct/cek-status.md)
+- [Kode respons (RC)](doc/transaksi-direct/kode-respons.md)
+- [Inquiry POST (JSON) — kontrak umum](doc/inquiry/inquiry-post.md)
+- [Contoh respons pulsa](doc/transaksi-direct/contoh-respons-pulsa.md) · [Skenario pengujian](doc/transaksi-direct/skenario-pengujian.md)
+- [Lampiran deposit tiket](doc/appendix-deposit-ticket.md)
+
+**Beranda situs (MkDocs):** [doc/index.md](doc/index.md)
 
 ---
 
@@ -22,16 +53,16 @@ Beranda situs MkDocs dan tabel lengkap endpoint: [doc/index.md](doc/index.md).
 
 | Area | Status | Keterangan |
 |------|--------|------------|
-| Direct purchase (JSON / HTTP / XML) | Dokumentasi tersedia | Pembelian produk dengan `code`, `msisdn`, `request_id` |
-| Cek saldo | Tersedia | `GET /saldo` |
-| Cek status transaksi | Tersedia | `POST /status` |
-| Kode respons (RC) | Tersedia | Tabel lengkap sukses, gagal, pending |
-| Contoh respons pulsa & game | Tersedia | Skenario + interpretasi field |
-| Klasifikasi produk game per `code` | Tersedia (template operasional) | Voucher / top-up non-zona / top-up zona; mapping ke `msisdn` |
-| Skenario pengujian | Tersedia | Checklist QA integrasi |
+| Introduction & alur transaksi | Tersedia | Direct purchase, inquiry, diagram flow |
+| PREPAID (pulsa, data) | Tersedia | Request / respon / test case |
+| GAME (top-up non-zone, zona, voucher) | Tersedia | Halaman per kategori + klasifikasi gabungan |
+| EWALLET (direct purchase, DANA inquiry) | Tersedia | Termasuk denom tetap & open amount |
+| Inquiry PLN | Tersedia | Contoh `CPLN` |
+| Direct purchase (JSON / HTTP / XML) | Tersedia | `code`, `msisdn`, `request_id` |
+| Cek saldo · status · RC | Tersedia | `GET /saldo`, `POST /status`, tabel RC |
+| Skenario pengujian | Tersedia | Checklist QA |
 | Deposit tiket | Lampiran | Di luar fokus direct purchase |
-| Inquiry (`POST /inquiry`) | Tersedia (contoh) | PLN prabayar `CPLN` — host demo/production di dokumen |
-| Daftar harga / katalog lengkap | Menyusul | Perlu daftar `code` resmi dari tim API |
+| Daftar harga / katalog lengkap | Menyusul | Perlu `code` resmi dari tim Indotech |
 
 ---
 
@@ -43,6 +74,8 @@ Beranda situs MkDocs dan tabel lengkap endpoint: [doc/index.md](doc/index.md).
 https://indotechapi.socx.app/reseller/api/v1
 ```
 
+Hostname mengandung `socx.app` sebagai domain API yang dipakai; **brand & dukungan** mengacu ke **Indotech**.
+
 Semua path endpoint di dokumen ditulis relatif terhadap base URL di atas (placeholder: `{base_url}`).
 
 **Autentikasi**
@@ -51,11 +84,11 @@ Semua path endpoint di dokumen ditulis relatif terhadap base URL di atas (placeh
   `Authorization: Bearer <JWT>`
 - Endpoint HTTP purchase (`/http/purchase`): JWT dikirim sebagai parameter `token` (selain `code`, `msisdn`, `request_id`).
 
-Token JWT diperoleh dari portal reseller SOCX (menu **Settings** — nama pasti dapat disesuaikan jika berubah).
+Token JWT diperoleh dari portal reseller Indotech (menu **Settings** — nama pasti dapat disesuaikan jika berubah).
 
 **Jaringan**
 
-- Server integrasi sebaiknya memakai **IP statis** dan didaftarkan untuk **whitelist** di sisi SOCX.
+- Server integrasi sebaiknya memakai **IP statis** dan didaftarkan untuk **whitelist** di sisi Indotech.
 
 Detail lengkap: [Pengenalan](doc/01-pengenalan.md) · [Persiapan integrasi](doc/02-persiapan-integrasi.md).
 
@@ -74,7 +107,7 @@ Detail lengkap: [Pengenalan](doc/01-pengenalan.md) · [Persiapan integrasi](doc/
 
 **Idempotensi:** jika Anda mengirim ulang **`request_id` yang sama** dan transaksi itu sudah pernah diproses, API mengembalikan **respons yang sama** dengan transaksi tersebut (bukan transaksi baru).
 
-**Pending (`rc = 68`):** transaksi diterima tetapi belum final; lanjutkan dengan polling **`/status`** dan/atau mekanisme callback jika sudah disepakati dengan tim SOCX (detail callback/XML `topUpReport` — review internal).
+**Pending (`rc = 68`):** transaksi diterima tetapi belum final; lanjutkan dengan polling **`/status`** dan/atau mekanisme callback jika sudah disepakati dengan tim Indotech (detail callback/XML `topUpReport` — review internal).
 
 ---
 
@@ -86,7 +119,7 @@ Detail lengkap: [Pengenalan](doc/01-pengenalan.md) · [Persiapan integrasi](doc/
 4. **Jika `rc = 68`:** panggil `POST /status` dengan interval wajar hingga status final (`00` atau kode gagal).
 5. **Simpan** `trxid`, `request_id`, `sn` (jika ada) untuk rekonsiliasi dan dukungan pelanggan.
 
-Diagram dan skenario detail: [doc/transaksi-direct/contoh-respons-pulsa.md](doc/transaksi-direct/contoh-respons-pulsa.md) · [doc/transaksi-direct/skenario-pengujian.md](doc/transaksi-direct/skenario-pengujian.md).
+Alur: [Direct Purchase without Inquiry](doc/transaksi-direct/flow-direct-purchase-without-inquiry.md) · [Direct Purchase with Inquiry](doc/transaksi-direct/flow-direct-purchase-with-inquiry.md) · [flow inquiry & purchase (ringkas)](doc/transaksi-direct/flow-inquiry-purchase.md) · [pulsa](doc/transaksi-direct/contoh-respons-pulsa.md) · [game](doc/game/README.md) · [skenario pengujian](doc/transaksi-direct/skenario-pengujian.md).
 
 ---
 
@@ -94,35 +127,30 @@ Diagram dan skenario detail: [doc/transaksi-direct/contoh-respons-pulsa.md](doc/
 
 ```
 .
-├── README.md                 ← Anda di sini (pengantar repositori)
-├── mkdocs.yml                ← Konfigurasi situs dokumentasi (Material)
-├── requirements-docs.txt     ← Dependensi Python untuk MkDocs
-├── .gitignore                ← Mengabaikan site/, venv, dll.
-└── doc/                      ← Sumber Markdown (isi situs)
-    ├── index.md              ← Beranda dokumentasi (daftar isi)
+├── README.md                 ← Pengantar repositori (Anda di sini)
+├── mkdocs.yml                ← Navigasi situs (Material)
+├── requirements-docs.txt
+├── .gitignore
+└── doc/
+    ├── index.md              ← Beranda MkDocs
+    ├── introduction-transaction-flow.md
     ├── 01-pengenalan.md
     ├── 02-persiapan-integrasi.md
     ├── appendix-deposit-ticket.md
+    ├── prepaid/              ← Pulsa, data
+    ├── game/                 ← Top-up non-zone, zona, voucher
+    ├── ewallet/              ← Direct purchase + DANA inquiry
     ├── inquiry/
     │   ├── README.md
-    │   └── inquiry-post.md   ← POST /inquiry (contoh PLN)
-    └── transaksi-direct/     ← Direct purchase, RC, contoh, uji
+    │   ├── inquiry-post.md   ← POST /inquiry (kontrak umum)
+    │   └── inquiry-pln.md    ← Contoh CPLN
+    └── transaksi-direct/     ← Purchase, saldo, status, RC, klasifikasi game
 ```
-
----
-
-## Status & review
-
-- Materi utama diselaraskan dengan spesifikasi internal API H2H SOCX.
-- Klasifikasi produk game sudah disiapkan sebagai template operasional untuk handover integrator.
-- Bagian yang masih perlu **konfirmasi tim SOCX / API** antara lain: format error HTTP, URL sandbox, kontrak callback setelah pending, daftar kode produk resmi (terutama game), delimiter final format parameter game (jika butuh area), serta perluasan inquiry per produk selain contoh PLN.
-
-Saran kontribusi: kirim **Pull Request** untuk perbaikan teks, contoh request/response terbaru dari UAT, atau pengisian tabel SKU di halaman produk game setelah ada data resmi.
 
 ---
 
 ## Lisensi & kontak
 
-Hak cipta dan kebijakan distribusi dokumen mengikuti kebijakan **SOCX / pemilik API**. Untuk akses sandbox, whitelist IP, atau pertanyaan integrasi, hubungi **tim SOCX / support** melalui kanal resmi yang diberikan kepada mitra.
+Hak cipta dan kebijakan distribusi dokumen mengikuti kebijakan **Indotech / pemilik API**. Untuk akses sandbox, whitelist IP, atau pertanyaan integrasi, hubungi **tim teknis Indotech** melalui kanal resmi yang diberikan kepada mitra.
 
 ---

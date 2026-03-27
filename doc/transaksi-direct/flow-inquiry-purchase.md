@@ -1,5 +1,7 @@
 # Flow Inquiry & Purchase (umum)
 
+> Penjelasan langkah lengkap inquiry → purchase: **[Direct Purchase with Inquiry](flow-direct-purchase-with-inquiry.md)**.
+
 Diagram berikut menggambarkan alur sampai transaksi final untuk integrasi game.
 
 Request detail (payload) mengikuti kontrak SOCX/API untuk `code` game Anda.
@@ -21,8 +23,6 @@ sequenceDiagram
   Indotech-->>Client: response purchase (rc=68, pending)
   Biller-->>Indotech: response (sn bila sukses)
   Indotech-->>Client: response purchase (rc=00 atau gagal)
-```
-/ End of Selection
 ```
 
 ## Catatan
