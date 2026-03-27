@@ -66,30 +66,6 @@ Repositori ini berisi **dokumentasi teknis** untuk integrasi **Host-to-Host (H2H
 
 ---
 
-## Base URL & autentikasi (ringkas)
-
-**Base URL (production — contoh dokumen):**
-
-```
-https://indotechapi.socx.app/reseller/api/v1
-```
-
-Hostname mengandung `socx.app` sebagai domain API yang dipakai; **brand & dukungan** mengacu ke **Indotech**.
-
-Semua path endpoint di dokumen ditulis relatif terhadap base URL di atas (placeholder: `{base_url}`).
-
-**Autentikasi**
-
-- Endpoint JSON (`/saldo`, `/purchase`, `/status`, `/deposit_ticket`, …): header  
-  `Authorization: Bearer <JWT>`
-- Endpoint HTTP purchase (`/http/purchase`): JWT dikirim sebagai parameter `token` (selain `code`, `msisdn`, `request_id`).
-
-Token JWT diperoleh dari portal reseller Indotech (menu **Settings** — nama pasti dapat disesuaikan jika berubah).
-
-**Jaringan**
-
-- Server integrasi sebaiknya memakai **IP statis** dan didaftarkan untuk **whitelist** di sisi Indotech.
-
 Detail lengkap: [Pengenalan](doc/01-pengenalan.md) · [Persiapan integrasi](doc/02-persiapan-integrasi.md).
 
 ---
