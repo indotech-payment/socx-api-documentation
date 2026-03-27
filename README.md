@@ -4,8 +4,6 @@ Repositori ini berisi **dokumentasi teknis** untuk integrasi **Host-to-Host (H2H
 
 ---
 
-## Daftar isi
-
 ### Introduction & Transaction Flow
 
 - [Ringkasan alur](doc/introduction-transaction-flow.md)
@@ -13,7 +11,6 @@ Repositori ini berisi **dokumentasi teknis** untuk integrasi **Host-to-Host (H2H
 - [Direct Purchase without Inquiry](doc/transaksi-direct/flow-direct-purchase-without-inquiry.md)
 - [Direct Purchase with Inquiry](doc/transaksi-direct/flow-direct-purchase-with-inquiry.md)
 
-### PREPAID (Pulsa, Data)
 
 - [Ringkasan PREPAID](doc/prepaid/README.md) — request, respon, test case
 
@@ -95,11 +92,8 @@ Detail lengkap: [Pengenalan](doc/01-pengenalan.md) · [Persiapan integrasi](doc/
 4. **Jika `rc = 68`:** panggil `POST /status` dengan interval wajar hingga status final (`00` atau kode gagal).
 5. **Simpan** `trxid`, `request_id`, `sn` (jika ada) untuk rekonsiliasi dan dukungan pelanggan.
 
-Alur: [Direct Purchase without Inquiry](doc/transaksi-direct/flow-direct-purchase-without-inquiry.md) · [Direct Purchase with Inquiry](doc/transaksi-direct/flow-direct-purchase-with-inquiry.md) · [flow inquiry & purchase (ringkas)](doc/transaksi-direct/flow-inquiry-purchase.md) · [pulsa](doc/transaksi-direct/contoh-respons-pulsa.md) · [game](doc/game/README.md) · [skenario pengujian](doc/transaksi-direct/skenario-pengujian.md).
-
----
-
-## Struktur repositori
+Alur: [DAlur: [Direct Purchase without Inquiry](doc/transaksi-direct/flow-direct-purchase-without-inquiry.md) · [Direct Purchase with Inquiry](doc/transaksi-direct/flow-direct-purchase-with-inquiry.md) · [flow inquiry & purchase (ringkas)](doc/transaksi-direct/flow-inquiry-purchase.md) · [pulsa](doc/transaksi-direct/contoh-respons-pulsa.md) · [game](doc/game/README.md) · [skenario pengujian](doc/transaksi-direct/skenario-pengujian.md).
+ Struktur repositori
 
 ```
 .
