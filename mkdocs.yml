@@ -63,7 +63,7 @@ nav:
       - Ringkasan alur: introduction-transaction-flow.md
       - Pengenalan: 01-pengenalan.md
       - Direct Purchase without Inquiry: transaksi-direct/flow-direct-purchase-without-inquiry.md
-      - "Payment — with inquiry": transaksi-direct/payment-with-inquiry.md
+      - "payment with inquiry": transaksi-direct/payment-with-inquiry.md
   - PREPAID (Pulsa, Data):
       - Request: transaksi-direct/pembelian-json-post.md
       - Respon: transaksi-direct/contoh-respons-pulsa.md
@@ -95,7 +95,6 @@ nav:
       - Cek status: transaksi-direct/cek-status.md
       - Kode respons (RC): transaksi-direct/kode-respons.md
       - Inquiry POST (JSON): inquiry/inquiry-post.md
-      - Flow inquiry & purchase (diagram ringkas): transaksi-direct/flow-inquiry-purchase.md
   - Lampiran — deposit tiket: appendix-deposit-ticket.md
 
 extra:

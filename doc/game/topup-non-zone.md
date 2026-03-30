@@ -2,20 +2,18 @@
 
 Kategori ini dipakai untuk game yang cukup memakai **user/game ID** tanpa zone/server terpisah (kecuali catatan khusus di tabel).
 
-## Daftar produk & akun uji
+## Daftar game non-zone
 
-| Kode (`code`) | Produk | Akun testing (`msisdn`) |
-|---------------|--------|-------------------------|
-| `PUBGC60` | AOV 40 VOUCHER | `208937006531741` |
-| `CODC31` | CODM 31 CP | `7919258494310370169` |
-| `CFF5` | Free Fire 5 Diamond | `704899131` |
-| `CML5` | MLBB 5 Diamonds (5+0 Diamonds) | `2890873339499` (user `289087333`, server `9499`, gabungan per format SKU) |
-| `GUC80` | Garena Undawn 80 RC | `13001106293` |
-| `PUBGC60` | PUBG MOBILE 60 UC | `5233371716` |
-| `HOKC16` | Honor of Kings 16 Tokens | `11644792630330055579` |
+Beberapa contoh produk top-up game tanpa zona (cukup input user/game ID):
 
+- Mobile Legend (MLBB)
+- Free Fire
+- PUBG Mobile
+- Call of Duty Mobile (CODM)
+- Garena Undawn
+- Honor of Kings
+- Arena of Valor (AOV)
 
-`CML5` (MLBB) secara klasifikasi termasuk **top-up dengan zona** — detail format gabungan ID + server ada di [Top-up — dengan zona](topup-zona.md).
 
 ## Request
 

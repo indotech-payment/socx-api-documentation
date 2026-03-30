@@ -1,6 +1,8 @@
-# Payment — with inquiry
+# payment with inquiry
 
 Alur **payment with inquiry** berarti Anda memanggil **`POST /inquiry`** terlebih dahulu untuk **validasi pelanggan / informasi produk**, lalu **`POST /purchase`** dengan parameter yang konsisten (misalnya `code` dan field tujuan dari hasil inquiry). Dipakai ketika SKU atau biller mewajibkan pre-check sebelum debit (contoh: **PLN prabayar**, **DANA** dengan alur inquiry denom, produk lain sesuai katalog).
+
+Request detail (payload) mengikuti kontrak SOCX/API untuk produk Anda.
 
 ## Ringkasan langkah integrasi
 
@@ -10,8 +12,6 @@ Alur **payment with inquiry** berarti Anda memanggil **`POST /inquiry`** terlebi
 4. Jika **`rc = 68`** — [`POST /status`](cek-status.md) atau callback (jika ada).
 
 ## Diagram alur (inquiry → purchase)
-
-Alur ini memperluas diagram direct purchase dengan langkah inquiry di depan (sinkron dengan [flow inquiry & purchase (referensi)](flow-inquiry-purchase.md)).
 
 ```mermaid
 sequenceDiagram
@@ -24,7 +24,7 @@ sequenceDiagram
   Indotech-->>Client: response inquiry
 
   Client->>Indotech: POST /purchase (code, msisdn, request_id)
-  Indotech->>Biller: request topup 
+  Indotech->>Biller: request topup
   alt Pending (rc=68)
     Indotech-->>Client: response purchase (rc=68, pending)
     Biller-->>Indotech: response (rc final, sn bila sukses)
@@ -32,6 +32,27 @@ sequenceDiagram
   else Langsung final
     Indotech-->>Client: response purchase (rc=00 atau gagal)
   end
+```
+
+## Diagram alur game (`code`, `msisdn`)
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant Client as Client/Reseller
+  participant Indotech as Indotech
+  participant Biller as Game Provider
+
+  Client->>Indotech: POST /inquiry (code, msisdn)
+  Indotech->>Biller: request inquiry (jika dibutuhkan)
+  Biller-->>Indotech: response inquiry (info produk)
+  Indotech-->>Client: response inquiry (info produk)
+
+  Client->>Indotech: POST /purchase (code, msisdn, request_id)
+  Indotech->>Biller: request topup / voucher (sesuai kategori)
+  Indotech-->>Client: response purchase (rc=68, pending)
+  Biller-->>Indotech: response (sn bila sukses)
+  Indotech-->>Client: response purchase (rc=00 atau gagal)
 ```
 
 ## Referensi per produk
@@ -47,3 +68,5 @@ sequenceDiagram
 
 - Mapping **`idpel` ↔ `msisdn`** atau field lain mengikuti **daftar produk** dari tim API untuk alur inquiry → purchase.
 - Jika `request_id` purchase sama dengan transaksi yang sudah ada, perilaku idempotensi mengikuti [pembelian JSON](pembelian-json-post.md).
+- Jika respons `rc=68`, transaksi dianggap **pending**.
+- Jika request purchase menggunakan `request_id` yang sama, SOCX mengembalikan data transaksi yang sudah ada sesuai data terakhir di sistem.
