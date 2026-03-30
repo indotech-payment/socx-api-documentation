@@ -1525,8 +1525,6 @@
       
         
       
-        
-      
     
     
     
@@ -1643,34 +1641,6 @@
     
   
     Pembelian HTTP
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pembelian-xml/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Pembelian XML
   
 
     
@@ -2040,7 +2010,7 @@
 
 
 <h1 id="kode-respons-rc">Kode respons (RC)<a class="headerlink" href="#kode-respons-rc" title="Permanent link">&para;</a></h1>
-<p>Kode <code>rc</code> pada respons JSON (dan <code>RESPONSECODE</code> pada XML) menggambarkan hasil transaksi.</p>
+<p>Kode <code>rc</code> pada respons JSON menggambarkan hasil transaksi.</p>
 <h2 id="payload-respons-json">Payload respons (JSON)<a class="headerlink" href="#payload-respons-json" title="Permanent link">&para;</a></h2>
 <p>Untuk <strong><code>POST /purchase</code></strong> dan <strong><code>POST /status</code></strong>, body respons memakai <strong>JSON</strong> dengan field umum berikut. Nilai konkret (mis. <code>message</code>, <code>sn</code>) mengikuti produk dan skenario; lihat juga <a href="../contoh-respons-pulsa/">contoh pulsa</a> dan <a href="../pembelian-json-post/">pembelian JSON</a>.</p>
 <table>
@@ -2138,7 +2108,6 @@
 <span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nomor pelanggan tidak ditemukan&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>XML:</strong> pemetaan setara memakai elemen <code>RESPONSECODE</code> (bukan <code>rc</code>); detail di <a href="../pembelian-xml/">pembelian XML</a>.</p>
 <h2 id="daftar-kode-rc">Daftar kode RC<a class="headerlink" href="#daftar-kode-rc" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
