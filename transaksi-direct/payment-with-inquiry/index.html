@@ -27,7 +27,7 @@
     
     
       
-        <title>Direct Purchase with Inquiry - Dokumentasi API Indotech</title>
+        <title>Payment — with inquiry - Dokumentasi API Indotech</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#direct-purchase-with-inquiry" class="md-skip">
+        <a href="#payment-with-inquiry" class="md-skip">
           Lewati ke isi
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Direct Purchase with Inquiry
+              Payment — with inquiry
             
           </span>
         </div>
@@ -453,7 +453,7 @@
   <span class="md-ellipsis">
     
   
-    Direct Purchase with Inquiry
+    Payment — with inquiry
   
 
     
@@ -471,7 +471,7 @@
   <span class="md-ellipsis">
     
   
-    Direct Purchase with Inquiry
+    Payment — with inquiry
   
 
     
@@ -1894,8 +1894,8 @@
   
 
 
-<h1 id="direct-purchase-with-inquiry">Direct Purchase with Inquiry<a class="headerlink" href="#direct-purchase-with-inquiry" title="Permanent link">&para;</a></h1>
-<p>Alur <strong>direct purchase with inquiry</strong> berarti Anda memanggil <strong><code>POST /inquiry</code></strong> terlebih dahulu untuk <strong>validasi pelanggan / informasi produk</strong>, lalu <strong><code>POST /purchase</code></strong> dengan parameter yang konsisten (misalnya <code>code</code> dan field tujuan dari hasil inquiry). Dipakai ketika SKU atau biller mewajibkan pre-check sebelum debit (contoh: <strong>PLN prabayar</strong>, <strong>DANA</strong> dengan alur inquiry denom, produk lain sesuai katalog).</p>
+<h1 id="payment-with-inquiry">Payment — with inquiry<a class="headerlink" href="#payment-with-inquiry" title="Permanent link">&para;</a></h1>
+<p>Alur <strong>payment with inquiry</strong> berarti Anda memanggil <strong><code>POST /inquiry</code></strong> terlebih dahulu untuk <strong>validasi pelanggan / informasi produk</strong>, lalu <strong><code>POST /purchase</code></strong> dengan parameter yang konsisten (misalnya <code>code</code> dan field tujuan dari hasil inquiry). Dipakai ketika SKU atau biller mewajibkan pre-check sebelum debit (contoh: <strong>PLN prabayar</strong>, <strong>DANA</strong> dengan alur inquiry denom, produk lain sesuai katalog).</p>
 <h2 id="ringkasan-langkah-integrasi">Ringkasan langkah integrasi<a class="headerlink" href="#ringkasan-langkah-integrasi" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong><a href="../../inquiry/inquiry-post/"><code>POST /inquiry</code></a></strong> — kirim <code>code</code> dan field yang diminta (mis. <code>idpel</code> untuk PLN); pastikan <code>rc = 00</code> dan data tampilan (<code>info[]</code>) sesuai kebutuhan UI.</li>
