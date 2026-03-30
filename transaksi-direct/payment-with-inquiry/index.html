@@ -27,7 +27,7 @@
     
     
       
-        <title>Payment — with inquiry - Dokumentasi API Indotech</title>
+        <title>payment with inquiry - Dokumentasi API Indotech</title>
       
     
     
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Payment — with inquiry
+              payment with inquiry
             
           </span>
         </div>
@@ -453,7 +453,7 @@
   <span class="md-ellipsis">
     
   
-    Payment — with inquiry
+    payment with inquiry
   
 
     
@@ -471,7 +471,7 @@
   <span class="md-ellipsis">
     
   
-    Payment — with inquiry
+    payment with inquiry
   
 
     
@@ -512,6 +512,17 @@
     <span class="md-ellipsis">
       
         Diagram alur (inquiry → purchase)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagram-alur-game-code-msisdn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram alur game (code, msisdn)
       
     </span>
   </a>
@@ -1497,8 +1508,6 @@
       
         
       
-        
-      
     
     
     
@@ -1742,34 +1751,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../flow-inquiry-purchase/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Flow inquiry & purchase (diagram ringkas)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1853,6 +1834,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#diagram-alur-game-code-msisdn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram alur game (code, msisdn)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#referensi-per-produk" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1894,8 +1886,9 @@
   
 
 
-<h1 id="payment-with-inquiry">Payment — with inquiry<a class="headerlink" href="#payment-with-inquiry" title="Permanent link">&para;</a></h1>
+<h1 id="payment-with-inquiry">payment with inquiry<a class="headerlink" href="#payment-with-inquiry" title="Permanent link">&para;</a></h1>
 <p>Alur <strong>payment with inquiry</strong> berarti Anda memanggil <strong><code>POST /inquiry</code></strong> terlebih dahulu untuk <strong>validasi pelanggan / informasi produk</strong>, lalu <strong><code>POST /purchase</code></strong> dengan parameter yang konsisten (misalnya <code>code</code> dan field tujuan dari hasil inquiry). Dipakai ketika SKU atau biller mewajibkan pre-check sebelum debit (contoh: <strong>PLN prabayar</strong>, <strong>DANA</strong> dengan alur inquiry denom, produk lain sesuai katalog).</p>
+<p>Request detail (payload) mengikuti kontrak SOCX/API untuk produk Anda.</p>
 <h2 id="ringkasan-langkah-integrasi">Ringkasan langkah integrasi<a class="headerlink" href="#ringkasan-langkah-integrasi" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong><a href="../../inquiry/inquiry-post/"><code>POST /inquiry</code></a></strong> — kirim <code>code</code> dan field yang diminta (mis. <code>idpel</code> untuk PLN); pastikan <code>rc = 00</code> dan data tampilan (<code>info[]</code>) sesuai kebutuhan UI.</li>
@@ -1904,7 +1897,6 @@
 <li>Jika <strong><code>rc = 68</code></strong> — <a href="../cek-status/"><code>POST /status</code></a> atau callback (jika ada).</li>
 </ol>
 <h2 id="diagram-alur-inquiry-purchase">Diagram alur (inquiry → purchase)<a class="headerlink" href="#diagram-alur-inquiry-purchase" title="Permanent link">&para;</a></h2>
-<p>Alur ini memperluas diagram direct purchase dengan langkah inquiry di depan (sinkron dengan <a href="../flow-inquiry-purchase/">flow inquiry &amp; purchase (referensi)</a>).</p>
 <pre class="mermaid"><code>sequenceDiagram
   autonumber
   participant Client as Client/Reseller
@@ -1915,7 +1907,7 @@
   Indotech--&gt;&gt;Client: response inquiry
 
   Client-&gt;&gt;Indotech: POST /purchase (code, msisdn, request_id)
-  Indotech-&gt;&gt;Biller: request topup 
+  Indotech-&gt;&gt;Biller: request topup
   alt Pending (rc=68)
     Indotech--&gt;&gt;Client: response purchase (rc=68, pending)
     Biller--&gt;&gt;Indotech: response (rc final, sn bila sukses)
@@ -1923,6 +1915,23 @@
   else Langsung final
     Indotech--&gt;&gt;Client: response purchase (rc=00 atau gagal)
   end</code></pre>
+<h2 id="diagram-alur-game-code-msisdn">Diagram alur game (<code>code</code>, <code>msisdn</code>)<a class="headerlink" href="#diagram-alur-game-code-msisdn" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>sequenceDiagram
+  autonumber
+  participant Client as Client/Reseller
+  participant Indotech as Indotech
+  participant Biller as Game Provider
+
+  Client-&gt;&gt;Indotech: POST /inquiry (code, msisdn)
+  Indotech-&gt;&gt;Biller: request inquiry (jika dibutuhkan)
+  Biller--&gt;&gt;Indotech: response inquiry (info produk)
+  Indotech--&gt;&gt;Client: response inquiry (info produk)
+
+  Client-&gt;&gt;Indotech: POST /purchase (code, msisdn, request_id)
+  Indotech-&gt;&gt;Biller: request topup / voucher (sesuai kategori)
+  Indotech--&gt;&gt;Client: response purchase (rc=68, pending)
+  Biller--&gt;&gt;Indotech: response (sn bila sukses)
+  Indotech--&gt;&gt;Client: response purchase (rc=00 atau gagal)</code></pre>
 <h2 id="referensi-per-produk">Referensi per produk<a class="headerlink" href="#referensi-per-produk" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1954,6 +1963,8 @@
 <ul>
 <li>Mapping <strong><code>idpel</code> ↔ <code>msisdn</code></strong> atau field lain mengikuti <strong>daftar produk</strong> dari tim API untuk alur inquiry → purchase.</li>
 <li>Jika <code>request_id</code> purchase sama dengan transaksi yang sudah ada, perilaku idempotensi mengikuti <a href="../pembelian-json-post/">pembelian JSON</a>.</li>
+<li>Jika respons <code>rc=68</code>, transaksi dianggap <strong>pending</strong>.</li>
+<li>Jika request purchase menggunakan <code>request_id</code> yang sama, SOCX mengembalikan data transaksi yang sudah ada sesuai data terakhir di sistem.</li>
 </ul>
 
 
