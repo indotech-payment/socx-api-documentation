@@ -80,7 +80,7 @@ nav:
   - Referensi Teknis:
       - Cek saldo: transaksi-direct/cek-saldo.md
       - Cek status: transaksi-direct/cek-status.md
-      - Lampiran — deposit tiket: appendix-deposit-ticket.md
+      - Deposit tiket: appendix-deposit-ticket.md
       - Kode respons (RC): transaksi-direct/kode-respons.md
 
 extra:
