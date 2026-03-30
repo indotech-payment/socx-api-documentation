@@ -519,17 +519,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#diagram-alur-game-code-msisdn" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Diagram alur game (code, msisdn)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#referensi-per-produk" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1804,17 +1793,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#diagram-alur-game-code-msisdn" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Diagram alur game (code, msisdn)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#referensi-per-produk" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1885,23 +1863,6 @@
   else Langsung final
     Indotech--&gt;&gt;Client: response purchase (rc=00 atau gagal)
   end</code></pre>
-<h2 id="diagram-alur-game-code-msisdn">Diagram alur game (<code>code</code>, <code>msisdn</code>)<a class="headerlink" href="#diagram-alur-game-code-msisdn" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>sequenceDiagram
-  autonumber
-  participant Client as Client/Reseller
-  participant Indotech as Indotech
-  participant Biller as Game Provider
-
-  Client-&gt;&gt;Indotech: POST /inquiry (code, msisdn)
-  Indotech-&gt;&gt;Biller: request inquiry (jika dibutuhkan)
-  Biller--&gt;&gt;Indotech: response inquiry (info produk)
-  Indotech--&gt;&gt;Client: response inquiry (info produk)
-
-  Client-&gt;&gt;Indotech: POST /purchase (code, msisdn, request_id)
-  Indotech-&gt;&gt;Biller: request topup / voucher (sesuai kategori)
-  Indotech--&gt;&gt;Client: response purchase (rc=68, pending)
-  Biller--&gt;&gt;Indotech: response (sn bila sukses)
-  Indotech--&gt;&gt;Client: response purchase (rc=00 atau gagal)</code></pre>
 <h2 id="referensi-per-produk">Referensi per produk<a class="headerlink" href="#referensi-per-produk" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
