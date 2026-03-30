@@ -1,4 +1,4 @@
-# Ewallet Direct Purchase
+# E-wallet Direct Purchase
 
 Transaksi e-wallet lewat `POST /purchase` — contoh **request**, **respons sukses**, dan referensi **kode respons (RC)**.
 

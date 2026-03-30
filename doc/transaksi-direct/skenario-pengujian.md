@@ -54,17 +54,6 @@ Checklist untuk QA sebelum production. Pastikan URL & kredensial sudah siap digu
 | C1 | Server SOCX POST `topUpReport` ke URL Anda | Badan sesuai contoh XML; HTTP 200 dari Anda |
 | C2 | Duplikasi callback untuk `REQUESTID` sama | Idempotent di sisi Anda (tidak dobel kredit user) |
 
-Isi baris C1–C2 setelah tim API menetapkan URL, auth, dan retry policy.
-
-## 8. Regression cepat
-
-Urutan minimal sebelum rilis integrasi:
-
-1. `GET /saldo`
-2. `POST /purchase` (satu transaksi uji)
-3. Jika `68` → `POST /status` hingga final
-4. Ulangi `purchase` dengan `request_id` sama → sama dengan langkah 3
-
 ---
 
 

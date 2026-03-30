@@ -1,4 +1,4 @@
-# PREPAID — Pulsa & Data
+# Prepaid — Pulsa & Data
 
 Transaksi prepaid (pulsa dan data) — **request**, **respons** (pending & sukses), dan catatan field. RC lengkap: [Kode respons (RC)](kode-respons.md).
 

@@ -43,11 +43,7 @@ Tiga kategori produk:
 - **Top-up dengan zona**
 - **Voucher**
 
-
-```
-
-
-## 1. Top-up tanpa zona
+## 1. Top-up Non zona
 
 Daftar game:
 - Free Fire
@@ -92,7 +88,7 @@ HTTP mengikuti [Pembelian](#pembelian-post-purchase) (Base URL, header, `POST /p
 
 ---
 
-## 2. Top-up dengan zona
+## 2. Top-up With zona
 
 - Format `msisdn`: **user ID + zone** (dijadikan satu, tanpa spasi).
 - Daftar game:

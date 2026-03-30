@@ -66,16 +66,16 @@ nav:
   - Beranda: index.md
   - Persiapan integrasi: 02-persiapan-integrasi.md
   - Introduction & Transaction Flow: introduction-transaction-flow.md
-  - PREPAID (Pulsa, Data):
+  - Prepaid (Pulsa, Data):
       - "Pulsa & Data": transaksi-direct/pembelian-pulsa-data.md
       - Test Case: transaksi-direct/skenario-pengujian.md
-  - GAME:
+  - Game:
       - "Top Up & Voucher": game/topup-voucher.md
       - Test Case: transaksi-direct/skenario-pengujian.md
-  - EWALLET:
+  - E-wallet:
       - "Ewallet Direct Purchase": transaksi-direct/pembelian-ewallet.md
       - Test Case: transaksi-direct/skenario-pengujian.md
-      - "DANA (inquiry)": ewallet/dana-inquiry.md
+      - "Dana (inquiry)": ewallet/dana-inquiry.md
   - Inquiry PLN: inquiry/inquiry-pln.md
   - Referensi Teknis:
       - Cek saldo: transaksi-direct/cek-saldo.md

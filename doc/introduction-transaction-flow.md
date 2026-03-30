@@ -9,14 +9,14 @@ SOCX menyediakan API reseller untuk transaksi prabayar via koneksi host-to-host.
 **Base URL**
 
 ```
-https://indotechapi.socx.app/reseller/api/v1/http/purchase
+https://indotechapi.socx.app/reseller/api/v1
 ```
 
 **Autentikasi**
 
 - Header JSON API: `Authorization: Bearer <JWT>`
 
-**Field  transaksi**
+**Field transaksi**
 
 - `code`: kode produk (SKU)
 - `msisdn`: nomor tujuan / ID tujuan sesuai produk
@@ -50,7 +50,7 @@ sequenceDiagram
   end
 ```
 
-## 2) Purchase dengan inquiry
+## 2) Payment with inquiry
 
 Dipakai saat produk butuh validasi dulu (contoh: PLN, DANA inquiry).
 
