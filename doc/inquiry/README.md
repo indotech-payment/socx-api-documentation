@@ -20,7 +20,7 @@ Sama seperti API reseller lainnya:
 1. **Inquiry** → validasi pelanggan / ambil info tampilan (`info[]`).
 2. **Purchase** → gunakan `code` yang sesuai dan field tujuan (`msisdn` atau setara) sesuai kategori:
    [pulsa/data](../transaksi-direct/pembelian-pulsa-data.md),
-   [game](../transaksi-direct/pembelian-game.md),
+   [game — Top Up & Voucher](../game/topup-voucher.md),
    [ewallet](../transaksi-direct/pembelian-ewallet.md).
 
 ## Menyusul
@@ -32,5 +32,5 @@ Sama seperti API reseller lainnya:
 
 Setelah inquiry, lanjut ke halaman purchase sesuai kategori:
 [pulsa/data](../transaksi-direct/pembelian-pulsa-data.md),
-[game](../transaksi-direct/pembelian-game.md), atau
+[game — Top Up & Voucher](../game/topup-voucher.md), atau
 [ewallet](../transaksi-direct/pembelian-ewallet.md).

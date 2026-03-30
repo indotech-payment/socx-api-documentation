@@ -44,8 +44,8 @@ Checklist untuk QA sebelum production. Pastikan URL & kredensial sudah siap digu
 
 | ID | Skenario | Ekspektasi |
 |----|----------|------------|
-| G1 | Purchase pulsa dengan kode resmi | `sn` / `message` sesuai contoh [pulsa](./contoh-respons-pulsa.md) |
-| G2 | Purchase game dengan kode resmi | `sn` mengikuti spesifikasi SKU di tabel [game](./klasifikasi-produk-game.md) |
+| G1 | Purchase pulsa dengan kode resmi | `sn` / `message` sesuai [PREPAID — Pulsa & Data](./pembelian-pulsa-data.md) |
+| G2 | Purchase game dengan kode resmi | `sn` mengikuti spesifikasi SKU di [Top Up & Voucher](../game/topup-voucher.md#klasifikasi-produk-game) |
 
 ## 7. Callback / webhook
 

@@ -1,8 +1,25 @@
-# Pembelian — Ewallet (JSON POST)
+# Ewallet Direct Purchase
 
-Request dan respons khusus kategori ewallet via `POST /purchase`.
+Transaksi e-wallet lewat `POST /purchase` — contoh **request**, **respons sukses**, dan referensi **kode respons (RC)**.
 
-## Request (contoh)
+**Endpoint**
+
+```
+https://indotechapi.socx.app/reseller/api/v1/purchase
+```
+
+**Header**
+
+```
+Authorization: Bearer <JWT>
+Content-Type: application/json
+```
+
+---
+
+## Request
+
+**Body (JSON)**
 
 ```json
 {
@@ -12,7 +29,10 @@ Request dan respons khusus kategori ewallet via `POST /purchase`.
 }
 ```
 
-## Response sukses (contoh)
+
+## Respons
+
+### Sukses (contoh, `rc=00`)
 
 ```json
 {
@@ -31,8 +51,12 @@ Request dan respons khusus kategori ewallet via `POST /purchase`.
 }
 ```
 
+### RC & respons lain
+
+Daftar lengkap kode hasil (`rc`), pending (`68`), dan error: **[Kode respons (RC)](kode-respons.md)**.
+
+---
+
 ## Catatan
 
-- Endpoint: `{base_url}/purchase`
-- Untuk flow inquiry DANA, lihat [Ringkasan DANA](../ewallet/dana-inquiry.md).
-- Untuk daftar `rc` gagal, lihat [kode respons (RC)](./kode-respons.md).
+- Alur **DANA dengan inquiry** (`POST /inquiry` dulu) terpisah: [Ringkasan DANA](../ewallet/dana-inquiry.md).

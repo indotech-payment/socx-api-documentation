@@ -12,14 +12,11 @@ Gunakan **menu kiri** untuk navigasi (situs ini dihasilkan dengan [MkDocs Materi
 | [Persiapan integrasi](02-persiapan-integrasi.md) | IP statis, whitelist, token, format `request_id` |
 | **Transaksi direct purchase** | |
 | → [Cek saldo](transaksi-direct/cek-saldo.md) | `GET /saldo` |
-| → [Pembelian Pulsa & Data (POST)](transaksi-direct/pembelian-pulsa-data.md) | `POST /purchase` kategori prepaid |
-| → [Pembelian Game (POST)](transaksi-direct/pembelian-game.md) | `POST /purchase` kategori game |
-| → [Pembelian Ewallet (POST)](transaksi-direct/pembelian-ewallet.md) | `POST /purchase` kategori ewallet |
-| → [Pembelian HTTP](transaksi-direct/pembelian-http.md) | `GET` / `POST /http/purchase` |
+| → [PREPAID — Pulsa & Data](transaksi-direct/pembelian-pulsa-data.md) | `POST /purchase` prepaid: request & respons |
+| → [Top Up & Voucher — game (POST)](game/topup-voucher.md) | `POST /purchase` game: request, klasifikasi, respons |
+| → [Ewallet Direct Purchase](transaksi-direct/pembelian-ewallet.md) | `POST /purchase` e-wallet (request & respons) |
 | → [Cek status](transaksi-direct/cek-status.md) | `POST /status` |
 | → [Kode respons (RC)](transaksi-direct/kode-respons.md) | Tabel RC |
-| → [Contoh respons — pulsa](transaksi-direct/contoh-respons-pulsa.md) | Payload & respons spesifik pulsa |
-| → [Klasifikasi & contoh respons produk game](transaksi-direct/klasifikasi-produk-game.md) | Acuan per `code`, request, respons, dan mapping `msisdn` |
 | → [Skenario pengujian](transaksi-direct/skenario-pengujian.md) | Checklist QA integrasi |
 | [Inquiry](inquiry/README.md) | `POST /inquiry` — contoh PLN prabayar (`CPLN`) |
 | [Lampiran — deposit tiket](appendix-deposit-ticket.md) | Di luar direct purchase; dari spesifikasi sumber |
@@ -28,4 +25,5 @@ Gunakan **menu kiri** untuk navigasi (situs ini dihasilkan dengan [MkDocs Materi
 
 - **Siap dipakai untuk integrasi:** direct purchase (JSON/HTTP), cek saldo, cek status, tabel RC — sesuai sumber internal `socx.md`.
 - **Perlu review tim SOCX / API:** callback setelah `rc = 68` (pending), verifikasi webhook/XML `topUpReport`, URL & kontrak **inquiry** / daftar harga, finalisasi parameter game per `code` di tabel klasifikasi.
+
 

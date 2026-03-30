@@ -1,22 +1,8 @@
 # EWALLET
 
-## Ewallet Direct Purchase
-
-### Request
-
-- [Pembelian Ewallet (POST)](../transaksi-direct/pembelian-ewallet.md)
-
-### Respon
-
-- [Kode respons (RC)](../transaksi-direct/kode-respons.md)
-
-### Test Case
-
-- [Skenario pengujian](../transaksi-direct/skenario-pengujian.md)
+- [Ewallet Direct Purchase](../transaksi-direct/pembelian-ewallet.md) — request, respons, tautan RC
+- [Skenario pengujian (Test Case)](../transaksi-direct/skenario-pengujian.md)
 
 ## DANA (inquiry)
 
-- [Ringkasan DANA](dana-inquiry.md)
-- [Denom tetap](dana-inquiry-denom-tetap.md)
-- [Denom Bebas](dana-inquiry-denom-bebas.md)
-
+- [DANA (inquiry)](dana-inquiry.md) — ringkasan + denom tetap + denom bebas

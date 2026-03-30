@@ -23,9 +23,6 @@ mkdocs serve
 ### Introduction & Transaction Flow
 
 - [Ringkasan alur](doc/introduction-transaction-flow.md)
-- [Pengenalan](doc/01-pengenalan.md)
-- [Direct Purchase without Inquiry](doc/transaksi-direct/flow-direct-purchase-without-inquiry.md)
-- [payment with inquiry](doc/transaksi-direct/payment-with-inquiry.md)
 
 
 - [Ringkasan PREPAID](doc/prepaid/README.md) — request, respon, test case
@@ -33,17 +30,12 @@ mkdocs serve
 ### GAME
 
 - [Ringkasan GAME](doc/game/README.md)
-- [Top-up — tanpa zona (non-zone)](doc/game/topup-non-zone.md)
-- [Top-up — dengan zona](doc/game/topup-zona.md)
-- [Voucher](doc/game/voucher.md)
-- [Klasifikasi & contoh respons (gabungan)](doc/transaksi-direct/klasifikasi-produk-game.md)
+- [Top Up & Voucher](doc/game/topup-voucher.md) — pembelian, klasifikasi, contoh respons
 
 ### EWALLET
 
 - [Ringkasan EWALLET](doc/ewallet/README.md)
 - [DANA (inquiry) — ringkasan](doc/ewallet/dana-inquiry.md)
-- [DANA — Denom tetap](doc/ewallet/dana-inquiry-denom-tetap.md)
-- [DANA — Denom Bebas](doc/ewallet/dana-inquiry-denom-bebas.md)
 
 ### Inquiry khusus
 
@@ -52,11 +44,10 @@ mkdocs serve
 ### Referensi teknis
 
 - [Persiapan integrasi](doc/02-persiapan-integrasi.md)
-- [Cek saldo](doc/transaksi-direct/cek-saldo.md) · [Pembelian Pulsa & Data](doc/transaksi-direct/pembelian-pulsa-data.md) · [Pembelian Game](doc/transaksi-direct/pembelian-game.md) · [Pembelian Ewallet](doc/transaksi-direct/pembelian-ewallet.md) · [Pembelian HTTP](doc/transaksi-direct/pembelian-http.md) · [Cek status](doc/transaksi-direct/cek-status.md)
-- [Kode respons (RC)](doc/transaksi-direct/kode-respons.md)
-- [Inquiry POST (JSON) — kontrak umum](doc/inquiry/inquiry-post.md)
-- [Contoh respons pulsa](doc/transaksi-direct/contoh-respons-pulsa.md) · [Skenario pengujian](doc/transaksi-direct/skenario-pengujian.md)
+- [Cek saldo](doc/transaksi-direct/cek-saldo.md) · [Pembelian Pulsa & Data](doc/transaksi-direct/pembelian-pulsa-data.md) · [Top Up & Voucher — game](doc/game/topup-voucher.md) · [Ewallet Direct Purchase](doc/transaksi-direct/pembelian-ewallet.md) · [Cek status](doc/transaksi-direct/cek-status.md)
 - [Lampiran deposit tiket](doc/appendix-deposit-ticket.md)
+- [Kode respons (RC)](doc/transaksi-direct/kode-respons.md)
+- [Skenario pengujian](doc/transaksi-direct/skenario-pengujian.md)
 
 **Beranda situs (MkDocs):** [doc/index.md](doc/index.md)
 
@@ -68,7 +59,7 @@ mkdocs serve
 |------|--------|------------|
 | Introduction & alur transaksi | Tersedia | Direct purchase, inquiry, diagram flow |
 | PREPAID (pulsa, data) | Tersedia | Request / respon / test case |
-| GAME (top-up non-zone, zona, voucher) | Tersedia | Halaman per kategori + klasifikasi gabungan |
+| GAME (top-up & voucher) | Tersedia | [Top Up & Voucher](doc/game/topup-voucher.md) — satu halaman |
 | EWALLET (direct purchase, DANA inquiry) | Tersedia | Termasuk denom tetap & open amount |
 | Inquiry PLN | Tersedia | Contoh `CPLN` |
 | Direct purchase (JSON / HTTP) | Tersedia | `code`, `msisdn`, `request_id` |
@@ -89,9 +80,8 @@ Detail lengkap: [Pengenalan](doc/01-pengenalan.md) · [Persiapan integrasi](doc/
 |--------|------|--------|-------------|
 | `GET` | `/saldo` | Cek saldo deposit | [doc/transaksi-direct/cek-saldo.md](doc/transaksi-direct/cek-saldo.md) |
 | `POST` | `/purchase` | Transaksi pembelian kategori prepaid | [doc/transaksi-direct/pembelian-pulsa-data.md](doc/transaksi-direct/pembelian-pulsa-data.md) |
-| `POST` | `/purchase` | Transaksi pembelian kategori game | [doc/transaksi-direct/pembelian-game.md](doc/transaksi-direct/pembelian-game.md) |
-| `POST` | `/purchase` | Transaksi pembelian kategori ewallet | [doc/transaksi-direct/pembelian-ewallet.md](doc/transaksi-direct/pembelian-ewallet.md) |
-| `GET` / `POST` | `/http/purchase` | Pembelian via query atau form + `token` | [doc/transaksi-direct/pembelian-http.md](doc/transaksi-direct/pembelian-http.md) |
+| `POST` | `/purchase` | Transaksi pembelian kategori game | [doc/game/topup-voucher.md](doc/game/topup-voucher.md) |
+| `POST` | `/purchase` | Ewallet Direct Purchase | [doc/transaksi-direct/pembelian-ewallet.md](doc/transaksi-direct/pembelian-ewallet.md) |
 | `POST` | `/status` | Cek status by `request_id` | [doc/transaksi-direct/cek-status.md](doc/transaksi-direct/cek-status.md) |
 | `POST` | `/deposit_ticket` | Buat tiket deposit | [doc/appendix-deposit-ticket.md](doc/appendix-deposit-ticket.md) |
 
@@ -109,7 +99,7 @@ Detail lengkap: [Pengenalan](doc/01-pengenalan.md) · [Persiapan integrasi](doc/
 4. **Jika `rc = 68`:** panggil `POST /status` dengan interval wajar hingga status final (`00` atau kode gagal).
 5. **Simpan** `trxid`, `request_id`, `sn` (jika ada) untuk rekonsiliasi dan dukungan pelanggan.
 
-Alur: [Direct Purchase without Inquiry](doc/transaksi-direct/flow-direct-purchase-without-inquiry.md) · [payment with inquiry](doc/transaksi-direct/payment-with-inquiry.md) · [pulsa](doc/transaksi-direct/contoh-respons-pulsa.md) · [game](doc/game/README.md) · [skenario pengujian](doc/transaksi-direct/skenario-pengujian.md).
+Alur: [Ringkasan alur](doc/introduction-transaction-flow.md) · [PREPAID — Pulsa & Data](doc/transaksi-direct/pembelian-pulsa-data.md) · [game](doc/game/README.md) · [skenario pengujian](doc/transaksi-direct/skenario-pengujian.md).
  Struktur repositori
 
 ```
@@ -141,3 +131,4 @@ Alur: [Direct Purchase without Inquiry](doc/transaksi-direct/flow-direct-purchas
 Hak cipta dan kebijakan distribusi dokumen mengikuti kebijakan **Indotech / pemilik API**. Untuk akses sandbox, whitelist IP, atau pertanyaan integrasi, hubungi **tim teknis Indotech** melalui kanal resmi yang diberikan kepada mitra.
 
 ---
+

@@ -23,18 +23,7 @@ Checklist sebelum mulai hit API production.
 
 Disarankan: prefix lingkungan + timestamp + random, contoh `STG-20250322-abc12`.
 
-## 4. Lingkungan
-
-| Lingkungan | Base URL | Catatan |
-|------------|----------|---------|
-| Production (contoh dokumen) | `https://indotechapi.socx.app/reseller/api/v1` | Sesuai `socx.md` |
-
-**Perlu konfirmasi:** URL endpoint dan kredensial yang dipakai — konfirmasi ke tim SOCX.
-
-## 5. HTTPS
+## 4. HTTPS
 
 Selalu gunakan **HTTPS** untuk semua panggilan API.
 
-## 6. Yang akan menyusul (inquiry)
-
-Daftar harga / katalog produk / **inquiry** — tunggu URL dan kontrak dari tim SOCX, lalu tambahkan halaman di folder [inquiry](inquiry/README.md).

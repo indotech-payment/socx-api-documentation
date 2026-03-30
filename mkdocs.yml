@@ -64,42 +64,25 @@ plugins:
 
 nav:
   - Beranda: index.md
-  - Introduction & Transaction Flow:
-      - Ringkasan alur: introduction-transaction-flow.md
-      - Pengenalan: 01-pengenalan.md
-      - Direct Purchase without Inquiry: transaksi-direct/flow-direct-purchase-without-inquiry.md
-      - "payment with inquiry": transaksi-direct/payment-with-inquiry.md
+  - Persiapan integrasi: 02-persiapan-integrasi.md
+  - Introduction & Transaction Flow: introduction-transaction-flow.md
   - PREPAID (Pulsa, Data):
-      - Request: transaksi-direct/pembelian-pulsa-data.md
-      - Respon: transaksi-direct/contoh-respons-pulsa.md
+      - "Pulsa & Data": transaksi-direct/pembelian-pulsa-data.md
       - Test Case: transaksi-direct/skenario-pengujian.md
   - GAME:
-      - Top Up & Voucher:
-          - Top-up — tanpa zona (non-zone): game/topup-non-zone.md
-          - Top-up — dengan zona: game/topup-zona.md
-          - Voucher: game/voucher.md
-      - Semua klasifikasi:
-          - Request: transaksi-direct/pembelian-game.md
-          - Respon: transaksi-direct/respon-produk-game.md
-          - Test Case: transaksi-direct/skenario-pengujian.md
+      - "Top Up & Voucher": game/topup-voucher.md
+      - Test Case: transaksi-direct/skenario-pengujian.md
   - EWALLET:
-      - Ewallet Direct Purchase:
-          - Request: transaksi-direct/pembelian-ewallet.md
-          - Respon: transaksi-direct/kode-respons.md
-          - Test Case: transaksi-direct/skenario-pengujian.md
-      - DANA (inquiry):
-          - Ringkasan: ewallet/dana-inquiry.md
-          - Denom tetap: ewallet/dana-inquiry-denom-tetap.md
-          - Denom Bebas: ewallet/dana-inquiry-denom-bebas.md
+      - "Ewallet Direct Purchase": transaksi-direct/pembelian-ewallet.md
+      - Test Case: transaksi-direct/skenario-pengujian.md
+      - "DANA (inquiry)": ewallet/dana-inquiry.md
   - Inquiry PLN: inquiry/inquiry-pln.md
   - Referensi Teknis:
-      - Persiapan integrasi: 02-persiapan-integrasi.md
       - Cek saldo: transaksi-direct/cek-saldo.md
-      - Pembelian HTTP: transaksi-direct/pembelian-http.md
       - Cek status: transaksi-direct/cek-status.md
+      - Lampiran — deposit tiket: appendix-deposit-ticket.md
       - Kode respons (RC): transaksi-direct/kode-respons.md
-      - Inquiry POST (JSON): inquiry/inquiry-post.md
-  - Lampiran — deposit tiket: appendix-deposit-ticket.md
 
 extra:
   generator: false
+
