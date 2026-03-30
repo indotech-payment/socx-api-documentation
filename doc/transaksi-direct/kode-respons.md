@@ -1,6 +1,6 @@
 # Kode respons (RC)
 
-Kode `rc` pada respons JSON (dan `RESPONSECODE` pada XML) menggambarkan hasil transaksi.
+Kode `rc` pada respons JSON menggambarkan hasil transaksi.
 
 ## Payload respons (JSON)
 
@@ -65,8 +65,6 @@ Untuk **`POST /purchase`** dan **`POST /status`**, body respons memakai **JSON**
   "message": "Nomor pelanggan tidak ditemukan"
 }
 ```
-
-**XML:** pemetaan setara memakai elemen `RESPONSECODE` (bukan `rc`); detail di [pembelian XML](./pembelian-xml.md).
 
 ## Daftar kode RC
 

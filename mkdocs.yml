@@ -96,7 +96,6 @@ nav:
       - Persiapan integrasi: 02-persiapan-integrasi.md
       - Cek saldo: transaksi-direct/cek-saldo.md
       - Pembelian HTTP: transaksi-direct/pembelian-http.md
-      - Pembelian XML: transaksi-direct/pembelian-xml.md
       - Cek status: transaksi-direct/cek-status.md
       - Kode respons (RC): transaksi-direct/kode-respons.md
       - Inquiry POST (JSON): inquiry/inquiry-post.md

@@ -14,7 +14,6 @@ Gunakan **menu kiri** untuk navigasi (situs ini dihasilkan dengan [MkDocs Materi
 | → [Cek saldo](transaksi-direct/cek-saldo.md) | `GET /saldo` |
 | → [Pembelian JSON (POST)](transaksi-direct/pembelian-json-post.md) | `POST /purchase` — **jalur utama** |
 | → [Pembelian HTTP](transaksi-direct/pembelian-http.md) | `GET` / `POST /http/purchase` |
-| → [Pembelian XML](transaksi-direct/pembelian-xml.md) | `POST /xml/purchase` |
 | → [Cek status](transaksi-direct/cek-status.md) | `POST /status` |
 | → [Kode respons (RC)](transaksi-direct/kode-respons.md) | Tabel RC |
 | → [Contoh respons — pulsa](transaksi-direct/contoh-respons-pulsa.md) | Payload & respons spesifik pulsa |
@@ -25,6 +24,6 @@ Gunakan **menu kiri** untuk navigasi (situs ini dihasilkan dengan [MkDocs Materi
 
 ## Status dokumen
 
-- **Siap dipakai untuk integrasi:** direct purchase (JSON/HTTP/XML), cek saldo, cek status, tabel RC — sesuai sumber internal `socx.md`.
+- **Siap dipakai untuk integrasi:** direct purchase (JSON/HTTP), cek saldo, cek status, tabel RC — sesuai sumber internal `socx.md`.
 - **Perlu review tim SOCX / API:** callback setelah `rc = 68` (pending), verifikasi webhook/XML `topUpReport`, URL & kontrak **inquiry** / daftar harga, finalisasi parameter game per `code` di tabel klasifikasi.
 

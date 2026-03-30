@@ -37,7 +37,7 @@ Repositori ini berisi **dokumentasi teknis** untuk integrasi **Host-to-Host (H2H
 ### Referensi teknis
 
 - [Persiapan integrasi](doc/02-persiapan-integrasi.md)
-- [Cek saldo](doc/transaksi-direct/cek-saldo.md) · [Pembelian JSON](doc/transaksi-direct/pembelian-json-post.md) · [HTTP / XML](doc/transaksi-direct/pembelian-http.md) · [Cek status](doc/transaksi-direct/cek-status.md)
+- [Cek saldo](doc/transaksi-direct/cek-saldo.md) · [Pembelian JSON](doc/transaksi-direct/pembelian-json-post.md) · [Pembelian HTTP](doc/transaksi-direct/pembelian-http.md) · [Cek status](doc/transaksi-direct/cek-status.md)
 - [Kode respons (RC)](doc/transaksi-direct/kode-respons.md)
 - [Inquiry POST (JSON) — kontrak umum](doc/inquiry/inquiry-post.md)
 - [Contoh respons pulsa](doc/transaksi-direct/contoh-respons-pulsa.md) · [Skenario pengujian](doc/transaksi-direct/skenario-pengujian.md)
@@ -56,7 +56,7 @@ Repositori ini berisi **dokumentasi teknis** untuk integrasi **Host-to-Host (H2H
 | GAME (top-up non-zone, zona, voucher) | Tersedia | Halaman per kategori + klasifikasi gabungan |
 | EWALLET (direct purchase, DANA inquiry) | Tersedia | Termasuk denom tetap & open amount |
 | Inquiry PLN | Tersedia | Contoh `CPLN` |
-| Direct purchase (JSON / HTTP / XML) | Tersedia | `code`, `msisdn`, `request_id` |
+| Direct purchase (JSON / HTTP) | Tersedia | `code`, `msisdn`, `request_id` |
 | Cek saldo · status · RC | Tersedia | `GET /saldo`, `POST /status`, tabel RC |
 | Skenario pengujian | Tersedia | Checklist QA |
 | Deposit tiket | Lampiran | Di luar fokus direct purchase |
@@ -75,7 +75,6 @@ Detail lengkap: [Pengenalan](doc/01-pengenalan.md) · [Persiapan integrasi](doc/
 | `GET` | `/saldo` | Cek saldo deposit | [doc/transaksi-direct/cek-saldo.md](doc/transaksi-direct/cek-saldo.md) |
 | `POST` | `/purchase` | Transaksi pembelian (JSON) — **disarankan** | [doc/transaksi-direct/pembelian-json-post.md](doc/transaksi-direct/pembelian-json-post.md) |
 | `GET` / `POST` | `/http/purchase` | Pembelian via query atau form + `token` | [doc/transaksi-direct/pembelian-http.md](doc/transaksi-direct/pembelian-http.md) |
-| `POST` | `/xml/purchase` | Pembelian format XML (`topUpRequest`) | [doc/transaksi-direct/pembelian-xml.md](doc/transaksi-direct/pembelian-xml.md) |
 | `POST` | `/status` | Cek status by `request_id` | [doc/transaksi-direct/cek-status.md](doc/transaksi-direct/cek-status.md) |
 | `POST` | `/deposit_ticket` | Buat tiket deposit | [doc/appendix-deposit-ticket.md](doc/appendix-deposit-ticket.md) |
 
@@ -89,7 +88,7 @@ Detail lengkap: [Pengenalan](doc/01-pengenalan.md) · [Persiapan integrasi](doc/
 
 1. **Persiapan:** whitelist IP, simpan JWT dengan aman, tentukan konvensi `request_id` (unik per order baru).
 2. **Opsional:** `GET /saldo` sebelum transaksi besar.
-3. **Purchase:** `POST /purchase` (atau jalur HTTP/XML jika sistem Anda mengharuskan).
+3. **Purchase:** `POST /purchase` (atau jalur HTTP jika sistem Anda mengharuskan).
 4. **Jika `rc = 68`:** panggil `POST /status` dengan interval wajar hingga status final (`00` atau kode gagal).
 5. **Simpan** `trxid`, `request_id`, `sn` (jika ada) untuk rekonsiliasi dan dukungan pelanggan.
 

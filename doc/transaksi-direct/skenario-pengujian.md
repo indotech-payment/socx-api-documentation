@@ -39,7 +39,6 @@ Checklist untuk QA sebelum production. Sesuaikan dengan **sandbox** begitu URL &
 |----|----------|------------|
 | H1 | `GET /http/purchase` dengan query lengkap | JSON respons setara `POST /purchase` |
 | H2 | `POST /http/purchase` form dengan field sama | Sama dengan H1 |
-| X1 | `POST /xml/purchase` `topUpRequest` | XML `methodResponse` dengan `RESPONSECODE` konsisten dengan RC |
 
 ## 6. Pulsa vs game
 

@@ -71,5 +71,5 @@ Jika Anda mengirim **`request_id` yang sama** dan transaksi itu **sudah pernah d
 
 - Respons detail per skenario: [contoh pulsa](./contoh-respons-pulsa.md), [klasifikasi & contoh game](./klasifikasi-produk-game.md)
 - Finalisasi pending: [cek status](./cek-status.md)
-- Jalur alternatif: [HTTP](./pembelian-http.md), [XML](./pembelian-xml.md)
+- Jalur alternatif: [HTTP](./pembelian-http.md)
 

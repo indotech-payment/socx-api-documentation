@@ -23,7 +23,6 @@ Di dokumen endpoint, `{base_url}` mengacu ke path di atas.
 |-------|--------|----------|----------------|
 | **JSON (disarankan)** | POST | `{base_url}/purchase` | Integrasi modern, body JSON |
 | HTTP query / form | GET / POST | `{base_url}/http/purchase` | Klien lama / gateway terbatas |
-| XML-RPC style | POST | `{base_url}/xml/purchase` | Kompatibilitas sistem XML |
 
 Detail field wajib dan contoh ada di masing-masing halaman [transaksi direct](transaksi-direct/README.md).
 

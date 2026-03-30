@@ -8,7 +8,6 @@ Bagian ini fokus pada alur **pembelian langsung** (top-up / voucher). Untuk **di
 2. **Purchase** — pilih satu jalur:
    - [`POST /purchase`](./pembelian-json-post.md) (disarankan)
    - [`/http/purchase`](./pembelian-http.md)
-   - [`POST /xml/purchase`](./pembelian-xml.md)
 3. Jika `rc = 68` (**pending**): polling [`POST /status`](./cek-status.md) sampai final, atau tunggu **callback** (kontrak **TBD** — lihat catatan di [contoh pulsa](./contoh-respons-pulsa.md)).
 
 ## Isi folder
@@ -18,7 +17,6 @@ Bagian ini fokus pada alur **pembelian langsung** (top-up / voucher). Untuk **di
 | [cek-saldo.md](./cek-saldo.md) | GET saldo |
 | [pembelian-json-post.md](./pembelian-json-post.md) | POST purchase JSON |
 | [pembelian-http.md](./pembelian-http.md) | GET/POST http purchase |
-| [pembelian-xml.md](./pembelian-xml.md) | XML topUpRequest |
 | [cek-status.md](./cek-status.md) | POST status |
 | [kode-respons.md](./kode-respons.md) | Tabel RC |
 | [contoh-respons-pulsa.md](./contoh-respons-pulsa.md) | Contoh lengkap pulsa |
