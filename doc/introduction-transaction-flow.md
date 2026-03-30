@@ -23,7 +23,7 @@ https://indotechapi.socx.app/reseller/api/v1
 - `request_id`: ID unik dari sisi client
 - `rc`: response code hasil transaksi
 
-## 1) Direct Purchase tanpa inquiry
+## 1) Direct Purchase without inquiry
 
 Dipakai saat produk tidak butuh pre-check.
 
