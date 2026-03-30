@@ -534,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-pulsa-data/" class="md-nav__link">
         
   
   
@@ -895,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-game/" class="md-nav__link">
         
   
   
@@ -923,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../klasifikasi-produk-game/" class="md-nav__link">
+      <a href="../respon-produk-game/" class="md-nav__link">
         
   
   
@@ -1113,7 +1113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-ewallet/" class="md-nav__link">
         
   
   
@@ -1934,7 +1934,7 @@
 <h2 id="response-contoh">Response (contoh)<a class="headerlink" href="#response-contoh" title="Permanent link">&para;</a></h2>
 <p>Format <strong>sama</strong> dengan respons purchase:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HSA5&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CTSEL5&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;msisdn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08121231231&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;999999&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;rc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;68&quot;</span><span class="p">,</span>
@@ -1948,7 +1948,7 @@
 <h2 id="praktik-integrasi">Praktik integrasi<a class="headerlink" href="#praktik-integrasi" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Setelah purchase mengembalikan <code>rc = 68</code>, lakukan <strong>polling</strong> <code>/status</code> dengan interval yang wajar (mis. 2–5 detik, backoff maksimal) hingga <code>rc</code> final (<code>00</code> sukses atau kode gagal lain).</li>
-<li><strong>TBD:</strong> Jika callback <code>topUpReport</code> aktif, sesuaikan agar tidak dobel-update status (gunakan <code>request_id</code> / <code>trxid</code> sebagai kunci idempotensi di DB Anda).</li>
+<li>Jika callback <code>topUpReport</code> aktif, sesuaikan agar tidak dobel-update status (gunakan <code>request_id</code> / <code>trxid</code> sebagai kunci idempotensi di DB Anda).</li>
 </ol>
 <h2 id="error">Error<a class="headerlink" href="#error" title="Permanent link">&para;</a></h2>
 <ul>

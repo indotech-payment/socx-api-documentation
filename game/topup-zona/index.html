@@ -534,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../transaksi-direct/pembelian-json-post/" class="md-nav__link">
+      <a href="../../transaksi-direct/pembelian-pulsa-data/" class="md-nav__link">
         
   
   
@@ -832,6 +832,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#definisi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definisi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabel-operasional-zona" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabel operasional (zona)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#daftar-game" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -854,41 +876,24 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#respon" class="md-nav__link">
+  <a href="#respons-sukses" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Respon
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Respon">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sukses-rc00" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sukses (rc=00)
+        Respons sukses
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#pending-rc68" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#respons-pending" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pending (rc=68)
+        Respons pending
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1014,7 +1019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../transaksi-direct/pembelian-json-post/" class="md-nav__link">
+      <a href="../../transaksi-direct/pembelian-game/" class="md-nav__link">
         
   
   
@@ -1042,7 +1047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../transaksi-direct/klasifikasi-produk-game/" class="md-nav__link">
+      <a href="../../transaksi-direct/respon-produk-game/" class="md-nav__link">
         
   
   
@@ -1232,7 +1237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../transaksi-direct/pembelian-json-post/" class="md-nav__link">
+      <a href="../../transaksi-direct/pembelian-ewallet/" class="md-nav__link">
         
   
   
@@ -1799,6 +1804,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#definisi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definisi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabel-operasional-zona" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabel operasional (zona)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#daftar-game" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1821,41 +1848,24 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#respon" class="md-nav__link">
+  <a href="#respons-sukses" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Respon
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Respon">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sukses-rc00" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sukses (rc=00)
+        Respons sukses
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#pending-rc68" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#respons-pending" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pending (rc=68)
+        Respons pending
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1892,10 +1902,42 @@
 
 <h1 id="top-up-dengan-zona">Top-up — dengan zona<a class="headerlink" href="#top-up-dengan-zona" title="Permanent link">&para;</a></h1>
 <p>Kategori ini dipakai untuk game yang memerlukan <strong>user ID + zone/server ID</strong>.</p>
+<h2 id="definisi">Definisi<a class="headerlink" href="#definisi" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>msisdn</code> dikirim sebagai nilai gabungan user + zone sesuai format SKU.</li>
+<li>SOCX/Indotech memproses pemisahan nilai tersebut di backend.</li>
+<li>Contoh kategori ini: Mobile Legends (<code>CML5</code>).</li>
+</ul>
+<h2 id="tabel-operasional-zona">Tabel operasional (zona)<a class="headerlink" href="#tabel-operasional-zona" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>code</th>
+<th>nama</th>
+<th>kategori</th>
+<th>format <code>msisdn</code></th>
+<th>payload</th>
+<th>contoh <code>msisdn</code></th>
+<th><code>sn</code> (contoh sukses)</th>
+<th>status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CML5</code></td>
+<td>MLBB 5 Diamonds (5+0 Diamonds) Corporate</td>
+<td><code>TOPUP_ZONA</code></td>
+<td>gabungan user + zone</td>
+<td><code>code</code>, <code>msisdn</code>, <code>request_id</code></td>
+<td><code>4189395759887</code></td>
+<td><code>ZIYECH. . RefId: CS774320333ZGVLM0U8VI</code></td>
+<td>Terverifikasi</td>
+</tr>
+</tbody>
+</table>
 <h2 id="daftar-game">Daftar game<a class="headerlink" href="#daftar-game" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Mobile Legends</li>
-<li>game lain yang butuh zone/server sesuai katalog Indotech</li>
 </ul>
 <h2 id="request">Request<a class="headerlink" href="#request" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1904,11 +1946,7 @@
 <span class="w">  </span><span class="nt">&quot;request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b624qp05nhnh52066&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p><code>msisdn</code> dikirim sebagai nilai gabungan user + zone sesuai format SKU; SOCX/Indotech memproses pemisahannya di backend.</p>
-</blockquote>
-<h2 id="respon">Respon<a class="headerlink" href="#respon" title="Permanent link">&para;</a></h2>
-<h3 id="sukses-rc00">Sukses (<code>rc=00</code>)<a class="headerlink" href="#sukses-rc00" title="Permanent link">&para;</a></h3>
+<h2 id="respons-sukses">Respons sukses<a class="headerlink" href="#respons-sukses" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;ref_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b624qp05nhnh52066&quot;</span><span class="p">,</span>
@@ -1924,7 +1962,7 @@
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="pending-rc68">Pending (<code>rc=68</code>)<a class="headerlink" href="#pending-rc68" title="Permanent link">&para;</a></h3>
+<h2 id="respons-pending">Respons pending<a class="headerlink" href="#respons-pending" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CML5&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;msisdn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4189395759887&quot;</span><span class="p">,</span>

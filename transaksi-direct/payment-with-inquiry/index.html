@@ -16,7 +16,7 @@
         <link rel="prev" href="../flow-direct-purchase-without-inquiry/">
       
       
-        <link rel="next" href="../pembelian-json-post/">
+        <link rel="next" href="../pembelian-pulsa-data/">
       
       
         
@@ -625,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-pulsa-data/" class="md-nav__link">
         
   
   
@@ -986,7 +986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-game/" class="md-nav__link">
         
   
   
@@ -1014,7 +1014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../klasifikasi-produk-game/" class="md-nav__link">
+      <a href="../respon-produk-game/" class="md-nav__link">
         
   
   
@@ -1204,7 +1204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-ewallet/" class="md-nav__link">
         
   
   
@@ -1840,7 +1840,8 @@
 <h2 id="ringkasan-langkah-integrasi">Ringkasan langkah integrasi<a class="headerlink" href="#ringkasan-langkah-integrasi" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong><a href="../../inquiry/inquiry-post/"><code>POST /inquiry</code></a></strong> — kirim <code>code</code> dan field yang diminta (mis. <code>idpel</code> untuk PLN); pastikan <code>rc = 00</code> dan data tampilan (<code>info[]</code>) sesuai kebutuhan UI.</li>
-<li><strong><a href="../pembelian-json-post/"><code>POST /purchase</code></a></strong> — gunakan <code>code</code> yang tepat serta <code>msisdn</code> / field setara sesuai kontrak produk (mapping dari inquiry jika perlu).</li>
+<li><strong><code>POST /purchase</code></strong> — gunakan <code>code</code> yang tepat serta <code>msisdn</code> / field setara sesuai kontrak produk (mapping dari inquiry jika perlu). Referensi per kategori:
+   <a href="../pembelian-pulsa-data/">pulsa/data</a>, <a href="../pembelian-game/">game</a>, <a href="../pembelian-ewallet/">ewallet</a>.</li>
 <li><strong>Baca <code>rc</code></strong> — sama dengan alur tanpa inquiry; lihat <a href="../kode-respons/">kode respons</a>.</li>
 <li>Jika <strong><code>rc = 68</code></strong> — <a href="../cek-status/"><code>POST /status</code></a> atau callback (jika ada).</li>
 </ol>
@@ -1893,7 +1894,7 @@
 <h2 id="catatan">Catatan<a class="headerlink" href="#catatan" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Mapping <strong><code>idpel</code> ↔ <code>msisdn</code></strong> atau field lain mengikuti <strong>daftar produk</strong> dari tim API untuk alur inquiry → purchase.</li>
-<li>Jika <code>request_id</code> purchase sama dengan transaksi yang sudah ada, perilaku idempotensi mengikuti <a href="../pembelian-json-post/">pembelian JSON</a>.</li>
+<li>Jika <code>request_id</code> purchase sama dengan transaksi yang sudah ada, perilaku idempotensi mengikuti kontrak purchase per kategori.</li>
 <li>Jika respons <code>rc=68</code>, transaksi dianggap <strong>pending</strong>.</li>
 <li>Jika request purchase menggunakan <code>request_id</code> yang sama, SOCX mengembalikan data transaksi yang sudah ada sesuai data terakhir di sistem.</li>
 </ul>

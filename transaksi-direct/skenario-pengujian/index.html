@@ -534,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-pulsa-data/" class="md-nav__link">
         
   
   
@@ -1030,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-game/" class="md-nav__link">
         
   
   
@@ -1058,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../klasifikasi-produk-game/" class="md-nav__link">
+      <a href="../respon-produk-game/" class="md-nav__link">
         
   
   
@@ -1383,7 +1383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-ewallet/" class="md-nav__link">
         
   
   
@@ -2193,7 +2193,7 @@
 
 
 <h1 id="skenario-pengujian-integrasi-direct-purchase">Skenario pengujian integrasi (direct purchase)<a class="headerlink" href="#skenario-pengujian-integrasi-direct-purchase" title="Permanent link">&para;</a></h1>
-<p>Checklist untuk QA sebelum production. Sesuaikan dengan <strong>sandbox</strong> begitu URL &amp; kredensial UAT tersedia.</p>
+<p>Checklist untuk QA sebelum production. Pastikan URL &amp; kredensial sudah siap digunakan.</p>
 <h2 id="1-autentikasi-jaringan">1. Autentikasi &amp; jaringan<a class="headerlink" href="#1-autentikasi-jaringan" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2212,12 +2212,12 @@
 <tr>
 <td>A2</td>
 <td>GET <code>/saldo</code> tanpa token / token salah</td>
-<td>Gagal auth (detail <strong>TBD</strong>: status code &amp; body)</td>
+<td>Respon Gagal auth</td>
 </tr>
 <tr>
 <td>A3</td>
 <td>Request dari IP <strong>tidak</strong> di-whitelist</td>
-<td>Ditolak (<strong>TBD</strong> format)</td>
+<td>Ditolak</td>
 </tr>
 </tbody>
 </table>
@@ -2261,7 +2261,7 @@
 <tr>
 <td>V1</td>
 <td>Hilangkan field wajib (<code>code</code> / <code>msisdn</code> / <code>request_id</code>)</td>
-<td><code>rc = 01</code> atau error validasi (<strong>TBD</strong>)</td>
+<td><code>rc = 01</code> atau respon error validasi</td>
 </tr>
 <tr>
 <td>V2</td>
@@ -2288,12 +2288,12 @@
 <tr>
 <td>S1</td>
 <td>Saldo lebih kecil dari harga produk</td>
-<td><code>rc = 18</code></td>
+<td>Respon Gagal <code>rc = 18</code></td>
 </tr>
 <tr>
 <td>S2</td>
 <td>Limit provider / cut off jika dapat disimulasikan</td>
-<td><code>rc = 36</code> / <code>35</code> (<strong>TBD</strong> di sandbox)</td>
+<td>Respon Gagal <code>rc = 36</code> / <code>35</code></td>
 </tr>
 </tbody>
 </table>
@@ -2331,12 +2331,12 @@
 <tbody>
 <tr>
 <td>G1</td>
-<td>Purchase pulsa dengan kode resmi sandbox</td>
+<td>Purchase pulsa dengan kode resmi</td>
 <td><code>sn</code> / <code>message</code> sesuai contoh <a href="../contoh-respons-pulsa/">pulsa</a></td>
 </tr>
 <tr>
 <td>G2</td>
-<td>Purchase game dengan kode resmi sandbox (<strong>TBD</strong> kode)</td>
+<td>Purchase game dengan kode resmi</td>
 <td><code>sn</code> mengikuti spesifikasi SKU di tabel <a href="../klasifikasi-produk-game/">game</a></td>
 </tr>
 </tbody>

@@ -625,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-pulsa-data/" class="md-nav__link">
         
   
   
@@ -986,7 +986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-game/" class="md-nav__link">
         
   
   
@@ -1014,7 +1014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../klasifikasi-produk-game/" class="md-nav__link">
+      <a href="../respon-produk-game/" class="md-nav__link">
         
   
   
@@ -1204,7 +1204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-ewallet/" class="md-nav__link">
         
   
   
@@ -1839,7 +1839,8 @@
 <h2 id="ringkasan-langkah-integrasi">Ringkasan langkah integrasi<a class="headerlink" href="#ringkasan-langkah-integrasi" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>(Opsional)</strong> <a href="../cek-saldo/"><code>GET /saldo</code></a> — cek saldo sebelum transaksi besar.</li>
-<li><strong><a href="../pembelian-json-post/"><code>POST /purchase</code></a></strong> — kirim <code>code</code>, <code>msisdn</code>, <code>request_id</code> unik.</li>
+<li><strong><code>POST /purchase</code></strong> — kirim <code>code</code>, <code>msisdn</code>, <code>request_id</code> unik sesuai kategori:
+   <a href="../pembelian-pulsa-data/">pulsa/data</a>, <a href="../pembelian-game/">game</a>, atau <a href="../pembelian-ewallet/">ewallet</a>.</li>
 <li><strong>Baca <code>rc</code></strong> pada respons — lihat <a href="../kode-respons/">kode respons</a>.</li>
 <li>Jika <strong><code>rc = 68</code> (pending)</strong> — polling <a href="../cek-status/"><code>POST /status</code></a> hingga status final, atau tunggu callback jika sudah disepakati.</li>
 </ol>
@@ -1871,7 +1872,7 @@
 <tbody>
 <tr>
 <td>Request &amp; field respons JSON</td>
-<td><a href="../pembelian-json-post/">Pembelian JSON (POST)</a></td>
+<td><a href="../pembelian-pulsa-data/">Pembelian Pulsa &amp; Data</a>, <a href="../pembelian-game/">Pembelian Game</a>, <a href="../pembelian-ewallet/">Pembelian Ewallet</a></td>
 </tr>
 <tr>
 <td>Pending &amp; polling</td>

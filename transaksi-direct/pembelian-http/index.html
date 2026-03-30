@@ -534,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-pulsa-data/" class="md-nav__link">
         
   
   
@@ -895,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-game/" class="md-nav__link">
         
   
   
@@ -923,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../klasifikasi-produk-game/" class="md-nav__link">
+      <a href="../respon-produk-game/" class="md-nav__link">
         
   
   
@@ -1113,7 +1113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-ewallet/" class="md-nav__link">
         
   
   
@@ -2001,7 +2001,7 @@
 </table>
 <h3 id="contoh-curl">Contoh cURL<a class="headerlink" href="#contoh-curl" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-g<span class="w"> </span>--request<span class="w"> </span>GET<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s1">&#39;https://indotechapi.socx.app/reseller/api/v1/http/purchase?code=HSA5&amp;request_id=123456&amp;msisdn=081234567890&amp;token=REPLACE-WITH-YOUR-JWT-TOKEN&#39;</span>
+<span class="w">  </span><span class="s1">&#39;https://indotechapi.socx.app/reseller/api/v1/http/purchase?code=CTSEL5&amp;request_id=123456&amp;msisdn=081234567890&amp;token=REPLACE-WITH-YOUR-JWT-TOKEN&#39;</span>
 </code></pre></div>
 <h2 id="post-form">POST (form)<a class="headerlink" href="#post-form" title="Permanent link">&para;</a></h2>
 <table>
@@ -2056,16 +2056,17 @@
 <h3 id="contoh-curl-multipart">Contoh cURL (multipart)<a class="headerlink" href="#contoh-curl-multipart" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-g<span class="w"> </span>--request<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;https://indotechapi.socx.app/reseller/api/v1/http/purchase&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--form<span class="w"> </span><span class="s1">&#39;code=HSA5&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--form<span class="w"> </span><span class="s1">&#39;code=CTSEL5&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--form<span class="w"> </span><span class="s1">&#39;request_id=13013&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--form<span class="w"> </span><span class="s1">&#39;msisdn=081471384&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--form<span class="w"> </span><span class="s1">&#39;token=REPLACE-WITH-YOUR-JWT-TOKEN&#39;</span>
 </code></pre></div>
-<p><strong>Catatan:</strong> Contoh asli spesifikasi memakai tanda kutip pada nilai form (<code>code="HSA5"</code>); banyak server menerima tanpa kutip. Samakan dengan perilaku server SOCX saat uji.</p>
+<p><strong>Catatan:</strong> Contoh asli spesifikasi memakai tanda kutip pada nilai form (<code>code="CTSEL5"</code>); banyak server menerima tanpa kutip. Samakan dengan perilaku server SOCX saat uji.</p>
 <h2 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h2>
-<p>Format JSON <strong>sama</strong> dengan <a href="../pembelian-json-post/">pembelian JSON POST</a>, contoh:</p>
+<p>Format JSON mengikuti kategori produk:
+<a href="../pembelian-pulsa-data/">pulsa/data</a>, <a href="../pembelian-game/">game</a>, atau <a href="../pembelian-ewallet/">ewallet</a>. Contoh:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HSA5&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CTSEL5&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;msisdn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08121231231&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;999999&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;rc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;68&quot;</span><span class="p">,</span>

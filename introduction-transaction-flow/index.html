@@ -614,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../transaksi-direct/pembelian-json-post/" class="md-nav__link">
+      <a href="../transaksi-direct/pembelian-pulsa-data/" class="md-nav__link">
         
   
   
@@ -975,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../transaksi-direct/pembelian-json-post/" class="md-nav__link">
+      <a href="../transaksi-direct/pembelian-game/" class="md-nav__link">
         
   
   
@@ -1003,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../transaksi-direct/klasifikasi-produk-game/" class="md-nav__link">
+      <a href="../transaksi-direct/respon-produk-game/" class="md-nav__link">
         
   
   
@@ -1193,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../transaksi-direct/pembelian-json-post/" class="md-nav__link">
+      <a href="../transaksi-direct/pembelian-ewallet/" class="md-nav__link">
         
   
   
@@ -1815,7 +1815,11 @@
 <h1 id="introduction-transaction-flow">Introduction &amp; Transaction Flow<a class="headerlink" href="#introduction-transaction-flow" title="Permanent link">&para;</a></h1>
 <p>Bagian ini merangkum alur dasar integrasi sebelum masuk ke kategori produk.</p>
 <h2 id="direct-purchase-without-inquiry">Direct Purchase without Inquiry<a class="headerlink" href="#direct-purchase-without-inquiry" title="Permanent link">&para;</a></h2>
-<p>Alur <strong>tanpa</strong> pre-check inquiry — langsung <a href="../transaksi-direct/pembelian-json-post/"><code>POST /purchase</code></a>. Diagram dan langkah lengkap: <strong><a href="../transaksi-direct/flow-direct-purchase-without-inquiry/">Direct Purchase without Inquiry</a></strong> (acuan diagram mengikuti <a href="../transaksi-direct/klasifikasi-produk-game/">klasifikasi produk game</a>).</p>
+<p>Alur <strong>tanpa</strong> pre-check inquiry — langsung <code>POST /purchase</code> sesuai kategori:
+<a href="../transaksi-direct/pembelian-pulsa-data/">pulsa/data</a>,
+<a href="../transaksi-direct/pembelian-game/">game</a>, atau
+<a href="../transaksi-direct/pembelian-ewallet/">ewallet</a>.
+Diagram dan langkah lengkap: <strong><a href="../transaksi-direct/flow-direct-purchase-without-inquiry/">Direct Purchase without Inquiry</a></strong> (acuan diagram mengikuti <a href="../transaksi-direct/klasifikasi-produk-game/">klasifikasi produk game</a>).</p>
 <h2 id="payment-with-inquiry">payment with inquiry<a class="headerlink" href="#payment-with-inquiry" title="Permanent link">&para;</a></h2>
 <p>Alur <strong>dengan</strong> <a href="../inquiry/inquiry-post/"><code>POST /inquiry</code></a> dulu, lalu purchase. Diagram dan langkah lengkap: <strong><a href="../transaksi-direct/payment-with-inquiry/">payment with inquiry</a></strong>.</p>
 <h2 id="referensi-cepat">Referensi cepat<a class="headerlink" href="#referensi-cepat" title="Permanent link">&para;</a></h2>

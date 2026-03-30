@@ -13,7 +13,7 @@
       
       
       
-        <link rel="prev" href="../pembelian-json-post/">
+        <link rel="prev" href="../pembelian-pulsa-data/">
       
       
         <link rel="next" href="../skenario-pengujian/">
@@ -534,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-pulsa-data/" class="md-nav__link">
         
   
   
@@ -648,50 +648,6 @@
     <span class="md-ellipsis">
       
         Skenario B — Sukses (rc = 00) — contoh spesifikasi
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#skenario-c-gagal-nomor-tidak-ditemukan-rc-07" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Skenario C — Gagal nomor tidak ditemukan (rc = 07)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#skenario-d-saldo-tidak-cukup-rc-18" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Skenario D — Saldo tidak cukup (rc = 18)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ringkasan-decision-tree-pulsa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ringkasan decision tree (pulsa)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#daftar-kode-produk-pulsa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Daftar kode produk pulsa
       
     </span>
   </a>
@@ -1019,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-game/" class="md-nav__link">
         
   
   
@@ -1047,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../klasifikasi-produk-game/" class="md-nav__link">
+      <a href="../respon-produk-game/" class="md-nav__link">
         
   
   
@@ -1237,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pembelian-json-post/" class="md-nav__link">
+      <a href="../pembelian-ewallet/" class="md-nav__link">
         
   
   
@@ -1836,50 +1792,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#skenario-c-gagal-nomor-tidak-ditemukan-rc-07" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Skenario C — Gagal nomor tidak ditemukan (rc = 07)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#skenario-d-saldo-tidak-cukup-rc-18" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Skenario D — Saldo tidak cukup (rc = 18)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ringkasan-decision-tree-pulsa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ringkasan decision tree (pulsa)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#daftar-kode-produk-pulsa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Daftar kode produk pulsa
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1901,7 +1813,7 @@
 
 
 <h1 id="contoh-respons-produk-pulsa">Contoh respons — produk pulsa<a class="headerlink" href="#contoh-respons-produk-pulsa" title="Permanent link">&para;</a></h1>
-<p>Produk <strong>pulsa</strong> memakai <code>code</code> SKU pulsa (contoh dokumen: <code>HSA5</code>) dan <code>msisdn</code> = <strong>nomor HP pelanggan</strong> (hanya digit, biasanya dimulai <code>08...</code>).</p>
+<p>Produk <strong>pulsa</strong> memakai <code>code</code> SKU pulsa (contoh dokumen: <code>CTSEL5</code>) dan <code>msisdn</code> = <strong>nomor HP pelanggan</strong> (hanya digit, biasanya dimulai <code>08...</code>).</p>
 <h2 id="request-json-post">Request (JSON POST)<a class="headerlink" href="#request-json-post" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nf">POST</span> <span class="nn">/reseller/api/v1/purchase</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">indotechapi.socx.app</span>
@@ -1909,7 +1821,7 @@
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 
 <span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HSA5&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CTSEL5&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;msisdn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08121231231&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PULSA-20250322-0001&quot;</span>
 <span class="p">}</span>
@@ -1917,7 +1829,7 @@
 <h2 id="skenario-a-pending-rc-68">Skenario A — Pending (<code>rc = 68</code>)<a class="headerlink" href="#skenario-a-pending-rc-68" title="Permanent link">&para;</a></h2>
 <p>Transaksi diterima; biller masih memproses.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HSA5&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CTSEL5&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;msisdn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08121231231&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PULSA-20250322-0001&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;rc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;68&quot;</span><span class="p">,</span>
@@ -1954,77 +1866,22 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Langkah integrator:</strong> panggil <a href="../cek-status/"><code>POST /status</code></a> dengan <code>request_id</code> yang sama, atau tunggu notifikasi server-ke-server jika sudah disepakati (<strong>TBD</strong>).</p>
+<p><strong>Langkah integrator:</strong> panggil <a href="../cek-status/"><code>POST /status</code></a> dengan <code>request_id</code> yang sama, atau tunggu notifikasi server-ke-server jika sudah disepakati (perlu konfirmasi).</p>
 <h2 id="skenario-b-sukses-rc-00-contoh-spesifikasi">Skenario B — Sukses (<code>rc = 00</code>) — contoh spesifikasi<a class="headerlink" href="#skenario-b-sukses-rc-00-contoh-spesifikasi" title="Permanent link">&para;</a></h2>
 <p><strong>Catatan:</strong> Contoh di bawah menggambarkan bentuk respons yang <strong>diharapkan</strong> integrator; sesuaikan dengan respons real dari API setelah transaksi final (validasi dengan tim SOCX).</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HSA5&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CTSEL5&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;msisdn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08121231231&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PULSA-20250322-0001&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;rc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;trxid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16413</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5400</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;balance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">341884600</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;sn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;02123123123123123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;sn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;04092900001248875319&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SUKSES&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Interpretasi pulsa</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>sn</code></td>
-<td>Bisa berisi referensi biller / token; tampilkan ke pelanggan jika relevan</td>
-</tr>
-<tr>
-<td><code>balance</code></td>
-<td>Saldo deposit Anda setelah transaksi</td>
-</tr>
-</tbody>
-</table>
-<h2 id="skenario-c-gagal-nomor-tidak-ditemukan-rc-07">Skenario C — Gagal nomor tidak ditemukan (<code>rc = 07</code>)<a class="headerlink" href="#skenario-c-gagal-nomor-tidak-ditemukan-rc-07" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HSA5&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;msisdn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08100000000&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PULSA-20250322-0002&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;rc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;07&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;trxid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;balance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">341890000</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;sn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nomor pelanggan tidak ditemukan&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p><strong>TBD:</strong> Pastikan format pasti <code>message</code> dan apakah <code>trxid</code> selalu <code>0</code> untuk gagal — verifikasi di UAT.</p>
-<h2 id="skenario-d-saldo-tidak-cukup-rc-18">Skenario D — Saldo tidak cukup (<code>rc = 18</code>)<a class="headerlink" href="#skenario-d-saldo-tidak-cukup-rc-18" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HSA5&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;msisdn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08121231231&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PULSA-20250322-0003&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;rc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;18&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;trxid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5400</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;balance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;sn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Saldo deposit tidak cukup&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
-<h2 id="ringkasan-decision-tree-pulsa">Ringkasan decision tree (pulsa)<a class="headerlink" href="#ringkasan-decision-tree-pulsa" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>flowchart TD
-  A[POST /purchase] --&gt; B{rc?}
-  B --&gt;|00| C[Simpan sukses + sn]
-  B --&gt;|68| D[Poll /status atau callback TBD]
-  B --&gt;|lainnya| E[Mapping RC ke pesan user]
-  D --&gt; F{final rc?}
-  F --&gt;|00| C
-  F --&gt;|gagal| E</code></pre>
-<h2 id="daftar-kode-produk-pulsa">Daftar kode produk pulsa<a class="headerlink" href="#daftar-kode-produk-pulsa" title="Permanent link">&para;</a></h2>
-<p><strong>TBD:</strong> Daftar resmi <code>code</code> (per operator / denom) akan masuk halaman <a href="../../inquiry/">Inquiry</a> setelah ada URL/kontrak dari tim SOCX. Untuk uji awal gunakan kode yang diberikan tim SOCX untuk sandbox.</p>
+<p>Untuk penanganan berbagai macam gagal lain, lihat <a href="../kode-respons/">kode respons (RC)</a>.</p>
 
 
 

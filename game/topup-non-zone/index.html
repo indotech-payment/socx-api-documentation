@@ -534,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../transaksi-direct/pembelian-json-post/" class="md-nav__link">
+      <a href="../../transaksi-direct/pembelian-pulsa-data/" class="md-nav__link">
         
   
   
@@ -804,10 +804,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#definisi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definisi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#daftar-game-non-zone" class="md-nav__link">
     <span class="md-ellipsis">
       
         Daftar game non-zone
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabel-operasional-non-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabel operasional (non-zone)
       
     </span>
   </a>
@@ -826,10 +848,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#respon" class="md-nav__link">
+  <a href="#respons-sukses" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Respon
+        Respons sukses
       
     </span>
   </a>
@@ -986,7 +1008,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../transaksi-direct/pembelian-json-post/" class="md-nav__link">
+      <a href="../../transaksi-direct/pembelian-game/" class="md-nav__link">
         
   
   
@@ -1014,7 +1036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../transaksi-direct/klasifikasi-produk-game/" class="md-nav__link">
+      <a href="../../transaksi-direct/respon-produk-game/" class="md-nav__link">
         
   
   
@@ -1204,7 +1226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../transaksi-direct/pembelian-json-post/" class="md-nav__link">
+      <a href="../../transaksi-direct/pembelian-ewallet/" class="md-nav__link">
         
   
   
@@ -1771,10 +1793,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#definisi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definisi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#daftar-game-non-zone" class="md-nav__link">
     <span class="md-ellipsis">
       
         Daftar game non-zone
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabel-operasional-non-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabel operasional (non-zone)
       
     </span>
   </a>
@@ -1793,10 +1837,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#respon" class="md-nav__link">
+  <a href="#respons-sukses" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Respon
+        Respons sukses
       
     </span>
   </a>
@@ -1835,9 +1879,14 @@
 
 
 <h1 id="top-up-tanpa-zona-non-zone">Top-up — tanpa zona (non-zone)<a class="headerlink" href="#top-up-tanpa-zona-non-zone" title="Permanent link">&para;</a></h1>
-<p>Kategori ini dipakai untuk game yang cukup memakai <strong>user/game ID</strong> tanpa zone/server terpisah (kecuali catatan khusus di tabel).</p>
+<p>Kategori ini dipakai untuk game yang cukup memakai <strong>user/game ID</strong> tanpa zone/server terpisah.</p>
+<h2 id="definisi">Definisi<a class="headerlink" href="#definisi" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Tujuan: isi saldo/item ke akun game memakai <strong>ID pemain</strong>.</li>
+<li><code>msisdn</code> berisi ID akun game (bukan nomor HP voucher).</li>
+<li><code>sn</code> pada sukses (<code>rc=00</code>) umumnya berupa referensi transaksi dari biller.</li>
+</ul>
 <h2 id="daftar-game-non-zone">Daftar game non-zone<a class="headerlink" href="#daftar-game-non-zone" title="Permanent link">&para;</a></h2>
-<p>Beberapa contoh produk top-up game tanpa zona (cukup input user/game ID):</p>
 <ul>
 <li>Mobile Legend (MLBB)</li>
 <li>Free Fire</li>
@@ -1847,6 +1896,33 @@
 <li>Honor of Kings</li>
 <li>Arena of Valor (AOV)</li>
 </ul>
+<h2 id="tabel-operasional-non-zone">Tabel operasional (non-zone)<a class="headerlink" href="#tabel-operasional-non-zone" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>code</th>
+<th>nama</th>
+<th>kategori</th>
+<th>format <code>msisdn</code></th>
+<th>payload</th>
+<th>contoh <code>msisdn</code></th>
+<th><code>sn</code> (contoh sukses)</th>
+<th>status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CFF5</code></td>
+<td>Free Fire 5 Diamond CORP</td>
+<td><code>TOPUP_NON_ZONA</code></td>
+<td>user ID</td>
+<td><code>code</code>, <code>msisdn</code>, <code>request_id</code></td>
+<td><code>704899131</code></td>
+<td><code>Free Fire 5 Diamonds /nickname : 死•ＩＲＦＡＮ•☠︎ refid: ab954b112f6c8aefbc6550167da150eb</code></td>
+<td>Terverifikasi</td>
+</tr>
+</tbody>
+</table>
 <h2 id="request">Request<a class="headerlink" href="#request" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CFF5&quot;</span><span class="p">,</span>
@@ -1854,7 +1930,7 @@
 <span class="w">  </span><span class="nt">&quot;request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eg45e10xpxge57760&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="respon">Respon<a class="headerlink" href="#respon" title="Permanent link">&para;</a></h2>
+<h2 id="respons-sukses">Respons sukses<a class="headerlink" href="#respons-sukses" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;ref_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eg45e10xpxge57760&quot;</span><span class="p">,</span>
