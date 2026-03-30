@@ -12,7 +12,9 @@ Gunakan **menu kiri** untuk navigasi (situs ini dihasilkan dengan [MkDocs Materi
 | [Persiapan integrasi](02-persiapan-integrasi.md) | IP statis, whitelist, token, format `request_id` |
 | **Transaksi direct purchase** | |
 | → [Cek saldo](transaksi-direct/cek-saldo.md) | `GET /saldo` |
-| → [Pembelian JSON (POST)](transaksi-direct/pembelian-json-post.md) | `POST /purchase` — **jalur utama** |
+| → [Pembelian Pulsa & Data (POST)](transaksi-direct/pembelian-pulsa-data.md) | `POST /purchase` kategori prepaid |
+| → [Pembelian Game (POST)](transaksi-direct/pembelian-game.md) | `POST /purchase` kategori game |
+| → [Pembelian Ewallet (POST)](transaksi-direct/pembelian-ewallet.md) | `POST /purchase` kategori ewallet |
 | → [Pembelian HTTP](transaksi-direct/pembelian-http.md) | `GET` / `POST /http/purchase` |
 | → [Cek status](transaksi-direct/cek-status.md) | `POST /status` |
 | → [Kode respons (RC)](transaksi-direct/kode-respons.md) | Tabel RC |

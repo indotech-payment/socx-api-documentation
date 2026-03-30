@@ -17,7 +17,7 @@ curl -L -X POST 'http://demoapi.socx.app/reseller/api/v1/inquiry' \
   "idpel": "121021034831",
   "request_id": "250717000000",
   "product_name": "Inquiry PLN Prabayar",
-  "client_name": "NRML~!@ $^*}?-&.UAT#TEST2",
+  "client_name": "NRML~!@ $^*}?-&.PROD#TEST2",
   "info": [
     {
       "name": "Nomor",
@@ -25,7 +25,7 @@ curl -L -X POST 'http://demoapi.socx.app/reseller/api/v1/inquiry' \
     },
     {
       "name": "Nama",
-      "value": "NRML~!@ $^*}?-&.UAT#TEST2"
+      "value": "NRML~!@ $^*}?-&.PROD#TEST2"
     },
     {
       "name": "Tarif/Daya",

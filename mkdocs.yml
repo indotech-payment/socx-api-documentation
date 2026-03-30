@@ -70,7 +70,7 @@ nav:
       - Direct Purchase without Inquiry: transaksi-direct/flow-direct-purchase-without-inquiry.md
       - "payment with inquiry": transaksi-direct/payment-with-inquiry.md
   - PREPAID (Pulsa, Data):
-      - Request: transaksi-direct/pembelian-json-post.md
+      - Request: transaksi-direct/pembelian-pulsa-data.md
       - Respon: transaksi-direct/contoh-respons-pulsa.md
       - Test Case: transaksi-direct/skenario-pengujian.md
   - GAME:
@@ -79,12 +79,12 @@ nav:
           - Top-up — dengan zona: game/topup-zona.md
           - Voucher: game/voucher.md
       - Semua klasifikasi:
-          - Request: transaksi-direct/pembelian-json-post.md
-          - Respon: transaksi-direct/klasifikasi-produk-game.md
+          - Request: transaksi-direct/pembelian-game.md
+          - Respon: transaksi-direct/respon-produk-game.md
           - Test Case: transaksi-direct/skenario-pengujian.md
   - EWALLET:
       - Ewallet Direct Purchase:
-          - Request: transaksi-direct/pembelian-json-post.md
+          - Request: transaksi-direct/pembelian-ewallet.md
           - Respon: transaksi-direct/kode-respons.md
           - Test Case: transaksi-direct/skenario-pengujian.md
       - DANA (inquiry):

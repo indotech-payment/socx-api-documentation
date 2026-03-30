@@ -4,7 +4,7 @@
 
 ### Request
 
-- [Pembelian JSON (POST)](../transaksi-direct/pembelian-json-post.md)
+- [Pembelian Ewallet (POST)](../transaksi-direct/pembelian-ewallet.md)
 
 ### Respon
 

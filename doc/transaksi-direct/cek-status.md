@@ -33,7 +33,7 @@ Format **sama** dengan respons purchase:
 
 ```json
 {
-  "code": "HSA5",
+  "code": "CTSEL5",
   "msisdn": "08121231231",
   "request_id": "999999",
   "rc": "68",
@@ -48,7 +48,7 @@ Format **sama** dengan respons purchase:
 ## Praktik integrasi
 
 1. Setelah purchase mengembalikan `rc = 68`, lakukan **polling** `/status` dengan interval yang wajar (mis. 2–5 detik, backoff maksimal) hingga `rc` final (`00` sukses atau kode gagal lain).
-2. **TBD:** Jika callback `topUpReport` aktif, sesuaikan agar tidak dobel-update status (gunakan `request_id` / `trxid` sebagai kunci idempotensi di DB Anda).
+2. Jika callback `topUpReport` aktif, sesuaikan agar tidak dobel-update status (gunakan `request_id` / `trxid` sebagai kunci idempotensi di DB Anda).
 
 ## Error
 

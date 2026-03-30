@@ -1,14 +1,14 @@
 # Skenario pengujian integrasi (direct purchase)
 
-Checklist untuk QA sebelum production. Sesuaikan dengan **sandbox** begitu URL & kredensial UAT tersedia.
+Checklist untuk QA sebelum production. Pastikan URL & kredensial sudah siap digunakan.
 
 ## 1. Autentikasi & jaringan
 
 | ID | Skenario | Ekspektasi |
 |----|----------|------------|
 | A1 | GET `/saldo` dengan JWT valid | HTTP 200, field `balance` numerik |
-| A2 | GET `/saldo` tanpa token / token salah | Gagal auth (detail **TBD**: status code & body) |
-| A3 | Request dari IP **tidak** di-whitelist | Ditolak (**TBD** format) |
+| A2 | GET `/saldo` tanpa token / token salah | Respon Gagal auth |
+| A3 | Request dari IP **tidak** di-whitelist | Ditolak  |
 
 ## 2. Pembelian JSON
 
@@ -22,7 +22,7 @@ Checklist untuk QA sebelum production. Sesuaikan dengan **sandbox** begitu URL &
 
 | ID | Skenario | Ekspektasi |
 |----|----------|------------|
-| V1 | Hilangkan field wajib (`code` / `msisdn` / `request_id`) | `rc = 01` atau error validasi (**TBD**) |
+| V1 | Hilangkan field wajib (`code` / `msisdn` / `request_id`) | `rc = 01` atau respon error validasi  |
 | V2 | `msisdn` berisi huruf / spasi | Gagal validasi |
 | V3 | `code` tidak terdaftar | `rc = 05` |
 
@@ -30,8 +30,8 @@ Checklist untuk QA sebelum production. Sesuaikan dengan **sandbox** begitu URL &
 
 | ID | Skenario | Ekspektasi |
 |----|----------|------------|
-| S1 | Saldo lebih kecil dari harga produk | `rc = 18` |
-| S2 | Limit provider / cut off jika dapat disimulasikan | `rc = 36` / `35` (**TBD** di sandbox) |
+| S1 | Saldo lebih kecil dari harga produk | Respon Gagal `rc = 18` |
+| S2 | Limit provider / cut off jika dapat disimulasikan | Respon Gagal `rc = 36` / `35`|
 
 ## 5. Jalur alternatif
 
@@ -44,8 +44,8 @@ Checklist untuk QA sebelum production. Sesuaikan dengan **sandbox** begitu URL &
 
 | ID | Skenario | Ekspektasi |
 |----|----------|------------|
-| G1 | Purchase pulsa dengan kode resmi sandbox | `sn` / `message` sesuai contoh [pulsa](./contoh-respons-pulsa.md) |
-| G2 | Purchase game dengan kode resmi sandbox (**TBD** kode) | `sn` mengikuti spesifikasi SKU di tabel [game](./klasifikasi-produk-game.md) |
+| G1 | Purchase pulsa dengan kode resmi | `sn` / `message` sesuai contoh [pulsa](./contoh-respons-pulsa.md) |
+| G2 | Purchase game dengan kode resmi | `sn` mengikuti spesifikasi SKU di tabel [game](./klasifikasi-produk-game.md) |
 
 ## 7. Callback / webhook
 

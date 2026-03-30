@@ -1,10 +1,14 @@
 # Top-up — tanpa zona (non-zone)
 
-Kategori ini dipakai untuk game yang cukup memakai **user/game ID** tanpa zone/server terpisah (kecuali catatan khusus di tabel).
+Kategori ini dipakai untuk game yang cukup memakai **user/game ID** tanpa zone/server terpisah.
+
+## Definisi
+
+- Tujuan: isi saldo/item ke akun game memakai **ID pemain**.
+- `msisdn` berisi ID akun game (bukan nomor HP voucher).
+- `sn` pada sukses (`rc=00`) umumnya berupa referensi transaksi dari biller.
 
 ## Daftar game non-zone
-
-Beberapa contoh produk top-up game tanpa zona (cukup input user/game ID):
 
 - Mobile Legend (MLBB)
 - Free Fire
@@ -14,6 +18,11 @@ Beberapa contoh produk top-up game tanpa zona (cukup input user/game ID):
 - Honor of Kings
 - Arena of Valor (AOV)
 
+## Tabel operasional (non-zone)
+
+| code | nama | kategori | format `msisdn` | payload | contoh `msisdn` | `sn` (contoh sukses) | status |
+|------|------|----------|-----------------|---------|-----------------|----------------------|--------|
+| `CFF5` | Free Fire 5 Diamond CORP | `TOPUP_NON_ZONA` | user ID | `code`, `msisdn`, `request_id` | `704899131` | `Free Fire 5 Diamonds /nickname : 死•ＩＲＦＡＮ•☠︎ refid: ab954b112f6c8aefbc6550167da150eb` | Terverifikasi |
 
 ## Request
 
@@ -25,7 +34,7 @@ Beberapa contoh produk top-up game tanpa zona (cukup input user/game ID):
 }
 ```
 
-## Respon
+## Respons sukses
 
 ```json
 {

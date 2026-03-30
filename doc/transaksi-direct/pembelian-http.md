@@ -22,7 +22,7 @@ Untuk klien yang tidak memakai JSON body dengan Bearer header saja, SOCX menyedi
 
 ```bash
 curl -g --request GET \
-  'https://indotechapi.socx.app/reseller/api/v1/http/purchase?code=HSA5&request_id=123456&msisdn=081234567890&token=REPLACE-WITH-YOUR-JWT-TOKEN'
+  'https://indotechapi.socx.app/reseller/api/v1/http/purchase?code=CTSEL5&request_id=123456&msisdn=081234567890&token=REPLACE-WITH-YOUR-JWT-TOKEN'
 ```
 
 ## POST (form)
@@ -47,21 +47,22 @@ curl -g --request GET \
 ```bash
 curl -g --request POST \
   'https://indotechapi.socx.app/reseller/api/v1/http/purchase' \
-  --form 'code=HSA5' \
+  --form 'code=CTSEL5' \
   --form 'request_id=13013' \
   --form 'msisdn=081471384' \
   --form 'token=REPLACE-WITH-YOUR-JWT-TOKEN'
 ```
 
-**Catatan:** Contoh asli spesifikasi memakai tanda kutip pada nilai form (`code="HSA5"`); banyak server menerima tanpa kutip. Samakan dengan perilaku server SOCX saat uji.
+**Catatan:** Contoh asli spesifikasi memakai tanda kutip pada nilai form (`code="CTSEL5"`); banyak server menerima tanpa kutip. Samakan dengan perilaku server SOCX saat uji.
 
 ## Response
 
-Format JSON **sama** dengan [pembelian JSON POST](./pembelian-json-post.md), contoh:
+Format JSON mengikuti kategori produk:
+[pulsa/data](./pembelian-pulsa-data.md), [game](./pembelian-game.md), atau [ewallet](./pembelian-ewallet.md). Contoh:
 
 ```json
 {
-  "code": "HSA5",
+  "code": "CTSEL5",
   "msisdn": "08121231231",
   "request_id": "999999",
   "rc": "68",

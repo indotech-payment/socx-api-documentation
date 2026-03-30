@@ -4,9 +4,9 @@ Bagian ini untuk produk prepaid seperti pulsa dan data.
 
 ## Request
 
-Gunakan format request purchase standar:
+Gunakan request purchase prepaid:
 
-- [Pembelian JSON (POST)](../transaksi-direct/pembelian-json-post.md)
+- [Pembelian Pulsa & Data (POST)](../transaksi-direct/pembelian-pulsa-data.md)
 
 ## Respon
 

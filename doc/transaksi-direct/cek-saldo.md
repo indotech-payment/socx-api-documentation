@@ -32,4 +32,4 @@ curl -g --request GET \
 
 ## Error umum
 
-Lihat [kode respons](./kode-respons.md) untuk RC yang muncul pada endpoint transaksi. Untuk `/saldo`, kegagalan autentikasi mengikuti pola API umum (**TBD:** format body error jika bukan 200 — konfirmasi tim API).
+Lihat [kode respons](./kode-respons.md) untuk RC yang muncul pada endpoint transaksi. Untuk `/saldo`, kegagalan autentikasi mengikuti pola API umum (format body error jika bukan 200 — perlu konfirmasi tim API).

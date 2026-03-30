@@ -11,11 +11,10 @@ Checklist sebelum mulai hit API production.
 ## 2. Token (JWT)
 
 1. Login ke portal reseller SOCX.
-2. Buka **Settings** (atau menu yang menyediakan token API — **TBD** jika nama menu berubah).
-3. Salin token dan simpan sebagai rahasia (environment variable / secret manager).
+2. Buka **Settings**.
+3. Salin token dan simpan sebagai rahasia .
 4. Header: `Authorization: Bearer <token>`.
 
-**Jangan** menaruh token di repositori Git atau log aplikasi.
 
 ## 3. Konvensi `request_id`
 
@@ -30,7 +29,7 @@ Disarankan: prefix lingkungan + timestamp + random, contoh `STG-20250322-abc12`.
 |------------|----------|---------|
 | Production (contoh dokumen) | `https://indotechapi.socx.app/reseller/api/v1` | Sesuai `socx.md` |
 
-**TBD:** URL sandbox / UAT dan kredensial uji — konfirmasi ke tim SOCX.
+**Perlu konfirmasi:** URL endpoint dan kredensial yang dipakai — konfirmasi ke tim SOCX.
 
 ## 5. HTTPS
 

@@ -18,11 +18,12 @@
 
 ### Request
 
-- [Pembelian JSON (POST)](../transaksi-direct/pembelian-json-post.md)
+- [Pembelian Game (POST)](../transaksi-direct/pembelian-game.md)
 
 ### Respon
 
-- [Klasifikasi & contoh respons produk game](../transaksi-direct/klasifikasi-produk-game.md)
+- [Respons produk game](../transaksi-direct/respon-produk-game.md)
+- [Klasifikasi produk game](../transaksi-direct/klasifikasi-produk-game.md)
 - [Kode respons (RC)](../transaksi-direct/kode-respons.md)
 
 ### Test Case

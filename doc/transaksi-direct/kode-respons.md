@@ -4,7 +4,7 @@ Kode `rc` pada respons JSON menggambarkan hasil transaksi.
 
 ## Payload respons (JSON)
 
-Untuk **`POST /purchase`** dan **`POST /status`**, body respons memakai **JSON** dengan field umum berikut. Nilai konkret (mis. `message`, `sn`) mengikuti produk dan skenario; lihat juga [contoh pulsa](./contoh-respons-pulsa.md) dan [pembelian JSON](./pembelian-json-post.md).
+Untuk **`POST /purchase`** dan **`POST /status`**, body respons memakai **JSON** dengan field umum berikut. Nilai konkret (mis. `message`, `sn`) mengikuti produk dan skenario; lihat juga [contoh pulsa](./contoh-respons-pulsa.md), [pembelian game](./pembelian-game.md), dan [pembelian ewallet](./pembelian-ewallet.md).
 
 | Field | Tipe | Keterangan |
 |-------|------|------------|
@@ -12,7 +12,7 @@ Untuk **`POST /purchase`** dan **`POST /status`**, body respons memakai **JSON**
 | `msisdn` | string | Nomor / ID tujuan (echo dari request jika relevan) |
 | `request_id` | string | Echo `request_id` Anda |
 | `rc` | string | Kode hasil — lihat tabel di bawah |
-| `trxid` | number | ID transaksi di sisi platform; bisa `0` saat gagal awal (verifikasi di UAT) |
+| `trxid` | number | ID transaksi di sisi platform; bisa `0` saat gagal awal (verifikasi sebelum go-live) |
 | `price` | number | Harga yang dikenakan untuk transaksi ini |
 | `balance` | number | Saldo deposit Anda setelah operasi (sesuai kebijakan API) |
 | `sn` | string | Serial / referensi biller / voucher; bisa kosong saat pending atau gagal |
@@ -22,7 +22,7 @@ Untuk **`POST /purchase`** dan **`POST /status`**, body respons memakai **JSON**
 
 ```json
 {
-  "code": "HSA5",
+  "code": "CTSEL5",
   "msisdn": "08121231231",
   "request_id": "PULSA-20250322-0001",
   "rc": "00",
@@ -38,7 +38,7 @@ Untuk **`POST /purchase`** dan **`POST /status`**, body respons memakai **JSON**
 
 ```json
 {
-  "code": "HSA5",
+  "code": "CTSEL5",
   "msisdn": "08121231231",
   "request_id": "PULSA-20250322-0001",
   "rc": "68",
@@ -54,7 +54,7 @@ Untuk **`POST /purchase`** dan **`POST /status`**, body respons memakai **JSON**
 
 ```json
 {
-  "code": "HSA5",
+  "code": "CTSEL5",
   "msisdn": "08100000000",
   "request_id": "PULSA-20250322-0002",
   "rc": "07",
@@ -98,8 +98,7 @@ Untuk **`POST /purchase`** dan **`POST /status`**, body respons memakai **JSON**
 
 ## Catatan implementasi
 
-- **`68`**: anggap transaksi **belum final**; lanjutkan dengan [cek status](./cek-status.md) dan/atau callback (**kontrak callback TBD**).
+- **`68`**: anggap transaksi **belum final**; lanjutkan dengan [cek status](./cek-status.md) dan/atau callback (kontrak callback perlu dikonfirmasi oleh tim API).
 - **`00`**: simpan `sn` jika ada sebagai bukti ke pelanggan.
 - **`18`**: cek [cek saldo](./cek-saldo.md) sebelum retry.
 
-**TBD:** Mapping HTTP status code (4xx/5xx) vs body JSON saat error — tambahkan setelah konfirmasi tim API.

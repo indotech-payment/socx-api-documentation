@@ -7,7 +7,8 @@ Request detail (payload) mengikuti kontrak SOCX/API untuk produk Anda.
 ## Ringkasan langkah integrasi
 
 1. **[`POST /inquiry`](../inquiry/inquiry-post.md)** — kirim `code` dan field yang diminta (mis. `idpel` untuk PLN); pastikan `rc = 00` dan data tampilan (`info[]`) sesuai kebutuhan UI.
-2. **[`POST /purchase`](pembelian-json-post.md)** — gunakan `code` yang tepat serta `msisdn` / field setara sesuai kontrak produk (mapping dari inquiry jika perlu).
+2. **`POST /purchase`** — gunakan `code` yang tepat serta `msisdn` / field setara sesuai kontrak produk (mapping dari inquiry jika perlu). Referensi per kategori:
+   [pulsa/data](pembelian-pulsa-data.md), [game](pembelian-game.md), [ewallet](pembelian-ewallet.md).
 3. **Baca `rc`** — sama dengan alur tanpa inquiry; lihat [kode respons](kode-respons.md).
 4. Jika **`rc = 68`** — [`POST /status`](cek-status.md) atau callback (jika ada).
 
@@ -46,6 +47,6 @@ sequenceDiagram
 ## Catatan
 
 - Mapping **`idpel` ↔ `msisdn`** atau field lain mengikuti **daftar produk** dari tim API untuk alur inquiry → purchase.
-- Jika `request_id` purchase sama dengan transaksi yang sudah ada, perilaku idempotensi mengikuti [pembelian JSON](pembelian-json-post.md).
+- Jika `request_id` purchase sama dengan transaksi yang sudah ada, perilaku idempotensi mengikuti kontrak purchase per kategori.
 - Jika respons `rc=68`, transaksi dianggap **pending**.
 - Jika request purchase menggunakan `request_id` yang sama, SOCX mengembalikan data transaksi yang sudah ada sesuai data terakhir di sistem.

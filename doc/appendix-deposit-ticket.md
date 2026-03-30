@@ -56,4 +56,4 @@ curl -g --request POST \
 }
 ```
 
-**TBD:** Validasi field `banks` di production, format tanggal, dan apakah respons persis sama — review dengan tim SOCX.
+Validasi field `banks` di production, format tanggal, dan apakah respons persis sama — review dengan tim SOCX.

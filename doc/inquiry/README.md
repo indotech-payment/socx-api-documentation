@@ -18,7 +18,10 @@ Sama seperti API reseller lainnya:
 ## Alur disarankan
 
 1. **Inquiry** → validasi pelanggan / ambil info tampilan (`info[]`).
-2. **Purchase** → gunakan `code` yang sesuai dan field tujuan (`msisdn` atau setara) sesuai [pembelian JSON](../transaksi-direct/pembelian-json-post.md).
+2. **Purchase** → gunakan `code` yang sesuai dan field tujuan (`msisdn` atau setara) sesuai kategori:
+   [pulsa/data](../transaksi-direct/pembelian-pulsa-data.md),
+   [game](../transaksi-direct/pembelian-game.md),
+   [ewallet](../transaksi-direct/pembelian-ewallet.md).
 
 ## Menyusul
 
@@ -27,4 +30,7 @@ Sama seperti API reseller lainnya:
 
 ## Link ke transaksi
 
-Setelah inquiry, lanjut ke [direct purchase — JSON POST](../transaksi-direct/pembelian-json-post.md).
+Setelah inquiry, lanjut ke halaman purchase sesuai kategori:
+[pulsa/data](../transaksi-direct/pembelian-pulsa-data.md),
+[game](../transaksi-direct/pembelian-game.md), atau
+[ewallet](../transaksi-direct/pembelian-ewallet.md).

@@ -4,7 +4,11 @@ Bagian ini merangkum alur dasar integrasi sebelum masuk ke kategori produk.
 
 ## Direct Purchase without Inquiry
 
-Alur **tanpa** pre-check inquiry — langsung [`POST /purchase`](transaksi-direct/pembelian-json-post.md). Diagram dan langkah lengkap: **[Direct Purchase without Inquiry](transaksi-direct/flow-direct-purchase-without-inquiry.md)** (acuan diagram mengikuti [klasifikasi produk game](transaksi-direct/klasifikasi-produk-game.md)).
+Alur **tanpa** pre-check inquiry — langsung `POST /purchase` sesuai kategori:
+[pulsa/data](transaksi-direct/pembelian-pulsa-data.md),
+[game](transaksi-direct/pembelian-game.md), atau
+[ewallet](transaksi-direct/pembelian-ewallet.md).
+Diagram dan langkah lengkap: **[Direct Purchase without Inquiry](transaksi-direct/flow-direct-purchase-without-inquiry.md)** (acuan diagram mengikuti [klasifikasi produk game](transaksi-direct/klasifikasi-produk-game.md)).
 
 ## payment with inquiry
 

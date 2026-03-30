@@ -2,6 +2,21 @@
 
 Repositori ini berisi **dokumentasi teknis** untuk integrasi **Host-to-Host (H2H)** antara sistem Anda dan platform **Indotech** sebagai reseller. Dokumen ditulis dalam Bahasa Indonesia dan diorganisir per **kategori produk** serta **referensi teknis** (selaras sidebar MkDocs).
 
+### Pratinjau MkDocs — jika isi halaman tidak berubah (cache)
+
+Jalankan **`mkdocs serve`** dari folder **ini** (`e:\Projects\dana\docs`, sejajar `mkdocs.yml` dan folder `doc/`). Kalau Anda sudah mengedit Markdown tetapi browser masih menampilkan versi lama (misalnya diagram yang sudah dihapus):
+
+1. **Hentikan** server: di terminal tempat `mkdocs serve` jalan, tekan **Ctrl+C**. Tutup juga terminal lain yang mungkin masih menjalankan MkDocs di port yang sama.
+2. **Hapus output build lalu build ulang** (PowerShell):
+
+```powershell
+Set-Location "e:\Projects\dana\docs"
+Remove-Item -Recurse -Force .\site -ErrorAction SilentlyContinue
+mkdocs build --clean
+mkdocs serve
+```
+
+3. Di browser: **hard refresh** (**Ctrl+F5**) atau buka situs di jendela **InPrivate/Incognito**. Pastikan URL sama dengan yang dicetak MkDocs (biasanya `http://127.0.0.1:8000/`).
 
 ---
 
@@ -37,7 +52,7 @@ Repositori ini berisi **dokumentasi teknis** untuk integrasi **Host-to-Host (H2H
 ### Referensi teknis
 
 - [Persiapan integrasi](doc/02-persiapan-integrasi.md)
-- [Cek saldo](doc/transaksi-direct/cek-saldo.md) · [Pembelian JSON](doc/transaksi-direct/pembelian-json-post.md) · [Pembelian HTTP](doc/transaksi-direct/pembelian-http.md) · [Cek status](doc/transaksi-direct/cek-status.md)
+- [Cek saldo](doc/transaksi-direct/cek-saldo.md) · [Pembelian Pulsa & Data](doc/transaksi-direct/pembelian-pulsa-data.md) · [Pembelian Game](doc/transaksi-direct/pembelian-game.md) · [Pembelian Ewallet](doc/transaksi-direct/pembelian-ewallet.md) · [Pembelian HTTP](doc/transaksi-direct/pembelian-http.md) · [Cek status](doc/transaksi-direct/cek-status.md)
 - [Kode respons (RC)](doc/transaksi-direct/kode-respons.md)
 - [Inquiry POST (JSON) — kontrak umum](doc/inquiry/inquiry-post.md)
 - [Contoh respons pulsa](doc/transaksi-direct/contoh-respons-pulsa.md) · [Skenario pengujian](doc/transaksi-direct/skenario-pengujian.md)
@@ -73,7 +88,9 @@ Detail lengkap: [Pengenalan](doc/01-pengenalan.md) · [Persiapan integrasi](doc/
 | Metode | Path | Fungsi | Dokumentasi |
 |--------|------|--------|-------------|
 | `GET` | `/saldo` | Cek saldo deposit | [doc/transaksi-direct/cek-saldo.md](doc/transaksi-direct/cek-saldo.md) |
-| `POST` | `/purchase` | Transaksi pembelian (JSON) — **disarankan** | [doc/transaksi-direct/pembelian-json-post.md](doc/transaksi-direct/pembelian-json-post.md) |
+| `POST` | `/purchase` | Transaksi pembelian kategori prepaid | [doc/transaksi-direct/pembelian-pulsa-data.md](doc/transaksi-direct/pembelian-pulsa-data.md) |
+| `POST` | `/purchase` | Transaksi pembelian kategori game | [doc/transaksi-direct/pembelian-game.md](doc/transaksi-direct/pembelian-game.md) |
+| `POST` | `/purchase` | Transaksi pembelian kategori ewallet | [doc/transaksi-direct/pembelian-ewallet.md](doc/transaksi-direct/pembelian-ewallet.md) |
 | `GET` / `POST` | `/http/purchase` | Pembelian via query atau form + `token` | [doc/transaksi-direct/pembelian-http.md](doc/transaksi-direct/pembelian-http.md) |
 | `POST` | `/status` | Cek status by `request_id` | [doc/transaksi-direct/cek-status.md](doc/transaksi-direct/cek-status.md) |
 | `POST` | `/deposit_ticket` | Buat tiket deposit | [doc/appendix-deposit-ticket.md](doc/appendix-deposit-ticket.md) |

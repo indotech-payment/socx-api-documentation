@@ -2,12 +2,23 @@
 
 Kategori ini dipakai untuk game yang memerlukan **user ID + zone/server ID**.
 
+## Definisi
+
+- `msisdn` dikirim sebagai nilai gabungan user + zone sesuai format SKU.
+- SOCX/Indotech memproses pemisahan nilai tersebut di backend.
+- Contoh kategori ini: Mobile Legends (`CML5`).
+
+## Tabel operasional (zona)
+
+| code | nama | kategori | format `msisdn` | payload | contoh `msisdn` | `sn` (contoh sukses) | status |
+|------|------|----------|-----------------|---------|-----------------|----------------------|--------|
+| `CML5` | MLBB 5 Diamonds (5+0 Diamonds) Corporate | `TOPUP_ZONA` | gabungan user + zone | `code`, `msisdn`, `request_id` | `4189395759887` | `ZIYECH. . RefId: CS774320333ZGVLM0U8VI` | Terverifikasi |
+
 ## Daftar game
-
 - Mobile Legends
-- game lain yang butuh zone/server sesuai katalog Indotech
 
-## Request
+
+## Request 
 
 ```json
 {
@@ -17,11 +28,7 @@ Kategori ini dipakai untuk game yang memerlukan **user ID + zone/server ID**.
 }
 ```
 
-> `msisdn` dikirim sebagai nilai gabungan user + zone sesuai format SKU; SOCX/Indotech memproses pemisahannya di backend.
-
-## Respon
-
-### Sukses (`rc=00`)
+## Respons sukses
 
 ```json
 {
@@ -40,7 +47,7 @@ Kategori ini dipakai untuk game yang memerlukan **user ID + zone/server ID**.
 }
 ```
 
-### Pending (`rc=68`)
+## Respons pending
 
 ```json
 {

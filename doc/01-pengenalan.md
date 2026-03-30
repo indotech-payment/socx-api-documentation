@@ -39,4 +39,4 @@ Detail field wajib dan contoh ada di masing-masing halaman [transaksi direct](tr
 
 ## Dokumen sumber
 
-Spesifikasi awal diolah dari dokumen internal **API H2H SOCX** (`socx.md`). Bagian yang belum ada di sumber ditandai **TBD** agar bisa dilengkapi setelah konfirmasi tim API.
+Spesifikasi awal diolah dari dokumen internal **API H2H SOCX** (`socx.md`). Bagian yang belum ada di sumber ditandai agar bisa dilengkapi setelah konfirmasi tim API.

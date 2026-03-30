@@ -6,16 +6,20 @@ Bagian ini fokus pada alur **pembelian langsung** (top-up / voucher). Untuk **di
 
 1. **Cek saldo** (opsional tapi dianjurkan sebelum transaksi besar): [`GET /saldo`](./cek-saldo.md)
 2. **Purchase** — pilih satu jalur:
-   - [`POST /purchase`](./pembelian-json-post.md) (disarankan)
+   - [`POST /purchase` pulsa/data](./pembelian-pulsa-data.md)
+   - [`POST /purchase` game](./pembelian-game.md)
+   - [`POST /purchase` ewallet](./pembelian-ewallet.md)
    - [`/http/purchase`](./pembelian-http.md)
-3. Jika `rc = 68` (**pending**): polling [`POST /status`](./cek-status.md) sampai final, atau tunggu **callback** (kontrak **TBD** — lihat catatan di [contoh pulsa](./contoh-respons-pulsa.md)).
+3. Jika `rc = 68` (**pending**): polling [`POST /status`](./cek-status.md) sampai final, atau tunggu **callback** (kontrak callback perlu dikonfirmasi — lihat catatan di [contoh pulsa](./contoh-respons-pulsa.md)).
 
 ## Isi folder
 
 | File | Isi |
 |------|-----|
 | [cek-saldo.md](./cek-saldo.md) | GET saldo |
-| [pembelian-json-post.md](./pembelian-json-post.md) | POST purchase JSON |
+| [pembelian-pulsa-data.md](./pembelian-pulsa-data.md) | Request/response purchase pulsa & data |
+| [pembelian-game.md](./pembelian-game.md) | Request/response purchase game |
+| [pembelian-ewallet.md](./pembelian-ewallet.md) | Request/response purchase ewallet |
 | [pembelian-http.md](./pembelian-http.md) | GET/POST http purchase |
 | [cek-status.md](./cek-status.md) | POST status |
 | [kode-respons.md](./kode-respons.md) | Tabel RC |
