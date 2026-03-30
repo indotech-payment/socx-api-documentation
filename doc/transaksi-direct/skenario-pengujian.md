@@ -10,7 +10,7 @@ Checklist untuk QA sebelum production. Sesuaikan dengan **sandbox** begitu URL &
 | A2 | GET `/saldo` tanpa token / token salah | Gagal auth (detail **TBD**: status code & body) |
 | A3 | Request dari IP **tidak** di-whitelist | Ditolak (**TBD** format) |
 
-## 2. Pembelian JSON — happy path
+## 2. Pembelian JSON
 
 | ID | Skenario | Ekspektasi |
 |----|----------|------------|
@@ -48,7 +48,7 @@ Checklist untuk QA sebelum production. Sesuaikan dengan **sandbox** begitu URL &
 | G1 | Purchase pulsa dengan kode resmi sandbox | `sn` / `message` sesuai contoh [pulsa](./contoh-respons-pulsa.md) |
 | G2 | Purchase game dengan kode resmi sandbox (**TBD** kode) | `sn` mengikuti spesifikasi SKU di tabel [game](./klasifikasi-produk-game.md) |
 
-## 7. Callback / webhook (**TBD**)
+## 7. Callback / webhook
 
 | ID | Skenario | Ekspektasi |
 |----|----------|------------|
@@ -57,7 +57,7 @@ Checklist untuk QA sebelum production. Sesuaikan dengan **sandbox** begitu URL &
 
 Isi baris C1–C2 setelah tim API menetapkan URL, auth, dan retry policy.
 
-## 8. Regression cepat (smoke)
+## 8. Regression cepat
 
 Urutan minimal sebelum rilis integrasi:
 
@@ -68,5 +68,4 @@ Urutan minimal sebelum rilis integrasi:
 
 ---
 
-**Untuk owner:** serahkan dokumen ini ke tim API dengan pertanyaan terbuka: sandbox URL, format error HTTP, kontrak callback, dan daftar `code` untuk tabel pengujian G2.
 
