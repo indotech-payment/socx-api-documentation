@@ -1,6 +1,6 @@
 # Skenario pengujian integrasi (direct purchase)
 
-Checklist untuk QA sebelum production. Sesuaikan dengan **sandbox** begitu URL & kredensial UAT tersedia (**TBD**).
+Checklist untuk QA sebelum production. Sesuaikan dengan **sandbox** begitu URL & kredensial UAT tersedia.
 
 ## 1. Autentikasi & jaringan
 

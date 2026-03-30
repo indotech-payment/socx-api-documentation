@@ -2,10 +2,15 @@
 
 Kategori voucher menghasilkan kode redeem pada field `sn`.
 
-## Daftar voucher
+Dokumentasi ini hanya mencakup **Google Play** dan **Roblox**. Produk voucher lain mengikuti katalog Indotech.
 
-- Google Play (`GPC5`)
-- voucher game lain sesuai katalog Indotech
+## Google Play
+
+- `GPC5` — Google Play (contoh denominasi di lingkungan uji)
+
+## Roblox
+
+- Kode produk (`code`) mengikuti **katalog Indotech** untuk voucher Roblox (nomor HP di `msisdn` sama seperti voucher lain).
 
 ## Request
 
@@ -40,4 +45,3 @@ Kategori voucher menghasilkan kode redeem pada field `sn`.
 - `sn` harus terisi saat `rc=00` (kode voucher redeem).
 - Ulangi `request_id` yang sama harus idempotent.
 - Referensi skenario umum: [Skenario pengujian](../transaksi-direct/skenario-pengujian.md).
-

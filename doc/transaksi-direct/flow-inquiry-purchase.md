@@ -1,6 +1,6 @@
 # Flow Inquiry & Purchase (umum)
 
-> Penjelasan langkah lengkap inquiry → purchase: **[Direct Purchase with Inquiry](flow-direct-purchase-with-inquiry.md)**.
+> Penjelasan langkah lengkap inquiry → purchase: **[Payment — with inquiry](payment-with-inquiry.md)**.
 
 Diagram berikut menggambarkan alur sampai transaksi final untuk integrasi game.
 

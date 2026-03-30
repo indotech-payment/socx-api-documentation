@@ -6,9 +6,9 @@ Bagian ini merangkum alur dasar integrasi sebelum masuk ke kategori produk.
 
 Alur **tanpa** pre-check inquiry — langsung [`POST /purchase`](transaksi-direct/pembelian-json-post.md). Diagram dan langkah lengkap: **[Direct Purchase without Inquiry](transaksi-direct/flow-direct-purchase-without-inquiry.md)** (acuan diagram mengikuti [klasifikasi produk game](transaksi-direct/klasifikasi-produk-game.md)).
 
-## Direct Purchase with Inquiry
+## Payment — with inquiry
 
-Alur **dengan** [`POST /inquiry`](inquiry/inquiry-post.md) dulu, lalu purchase. Diagram dan langkah lengkap: **[Direct Purchase with Inquiry](transaksi-direct/flow-direct-purchase-with-inquiry.md)**.
+Alur **dengan** [`POST /inquiry`](inquiry/inquiry-post.md) dulu, lalu purchase. Diagram dan langkah lengkap: **[Payment — with inquiry](transaksi-direct/payment-with-inquiry.md)**.
 
 ## Referensi cepat
 

@@ -63,7 +63,7 @@ nav:
       - Ringkasan alur: introduction-transaction-flow.md
       - Pengenalan: 01-pengenalan.md
       - Direct Purchase without Inquiry: transaksi-direct/flow-direct-purchase-without-inquiry.md
-      - Direct Purchase with Inquiry: transaksi-direct/flow-direct-purchase-with-inquiry.md
+      - "Payment — with inquiry": transaksi-direct/payment-with-inquiry.md
   - PREPAID (Pulsa, Data):
       - Request: transaksi-direct/pembelian-json-post.md
       - Respon: transaksi-direct/contoh-respons-pulsa.md

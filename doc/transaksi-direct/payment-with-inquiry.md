@@ -1,6 +1,6 @@
-# Direct Purchase with Inquiry
+# Payment — with inquiry
 
-Alur **direct purchase with inquiry** berarti Anda memanggil **`POST /inquiry`** terlebih dahulu untuk **validasi pelanggan / informasi produk**, lalu **`POST /purchase`** dengan parameter yang konsisten (misalnya `code` dan field tujuan dari hasil inquiry). Dipakai ketika SKU atau biller mewajibkan pre-check sebelum debit (contoh: **PLN prabayar**, **DANA** dengan alur inquiry denom, produk lain sesuai katalog).
+Alur **payment with inquiry** berarti Anda memanggil **`POST /inquiry`** terlebih dahulu untuk **validasi pelanggan / informasi produk**, lalu **`POST /purchase`** dengan parameter yang konsisten (misalnya `code` dan field tujuan dari hasil inquiry). Dipakai ketika SKU atau biller mewajibkan pre-check sebelum debit (contoh: **PLN prabayar**, **DANA** dengan alur inquiry denom, produk lain sesuai katalog).
 
 ## Ringkasan langkah integrasi
 
