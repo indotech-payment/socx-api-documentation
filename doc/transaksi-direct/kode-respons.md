@@ -52,7 +52,6 @@ Untuk **`POST /purchase`** dan **`POST /status`**, body respons memakai **JSON**
 
 ### Contoh — gagal  (RC 23)
 
-
 ```json
 {
   "code": "CTSEL5",
@@ -115,6 +114,8 @@ Untuk **`POST /purchase`** dan **`POST /status`**, body respons memakai **JSON**
 | `79` | [API v2] payment_ref kadaluarsa — silakan inquiry ulang | Gagal |
 | `80` | [API v2] Nominal tagihan berubah sejak inquiry — payment_ref hangus, inquiry ulang (saldo tidak terpotong) | Gagal |
 | `81` | [API v2] payment_ref sudah dipakai payment lain (single-use) | Gagal |
+| `82` | Harga produk berubah — exact-price purchase ditolak, saldo tidak terpotong. Ambil harga terbaru via /products/{code} | Gagal |
+| `89` | [PPOB] Cek tagihan ulang saat pembayaran tidak berhasil — pembayaran dibatalkan, saldo tidak terpotong. Lakukan cek tagihan (inquiry) ulang; alasan detail ada di field msg | Gagal |
 | `100` | Tagihan sudah terbayar | Gagal |
 | `101` | Tidak ada tagihan | Gagal |
 | `102` | Nomor tidak valid | Gagal |
